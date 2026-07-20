@@ -1,0 +1,513 @@
+{
+  "pizza": {
+    "article": "https://en.wikipedia.org/wiki/Pizza_Margherita",
+    "file": "https://commons.wikimedia.org/wiki/File:Pizza_Margherita_stu_spivack.jpg",
+    "author": "stu_spivack",
+    "license": "CC BY-SA 2.0",
+    "bytes": 123755
+  },
+  "sushi": {
+    "article": "https://en.wikipedia.org/wiki/Sushi",
+    "file": "https://commons.wikimedia.org/wiki/File:Sushi_platter.jpg",
+    "author": "chidorian from Japan",
+    "license": "CC BY-SA 2.0",
+    "bytes": 292170
+  },
+  "tacos": {
+    "article": "https://en.wikipedia.org/wiki/Al_pastor",
+    "file": "https://commons.wikimedia.org/wiki/File:Tacos-al-Pastor.jpg",
+    "author": "Matt Saunders",
+    "license": "CC BY-SA 3.0",
+    "bytes": 601518
+  },
+  "croissant": {
+    "article": "https://en.wikipedia.org/wiki/Croissant",
+    "file": "https://commons.wikimedia.org/wiki/File:Croissant-Petr_Kratochvil.jpg",
+    "author": "Petr Kratochvil",
+    "license": "CC0",
+    "bytes": 89751
+  },
+  "pad-thai": {
+    "article": "https://en.wikipedia.org/wiki/Pad_thai",
+    "file": "https://commons.wikimedia.org/wiki/File:Phat_Thai_kung_Chang_Khien_street_stall.jpg",
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "bytes": 253806
+  },
+  "paella": {
+    "article": "https://en.wikipedia.org/wiki/Paella",
+    "file": "https://commons.wikimedia.org/wiki/File:01_Paella_Valenciana_original.jpg",
+    "author": "Jan Harenburg",
+    "license": "CC BY-SA 4.0",
+    "bytes": 246690
+  },
+  "poutine": {
+    "article": "https://en.wikipedia.org/wiki/Poutine",
+    "file": "https://commons.wikimedia.org/wiki/File:Food_at_WIkimanian_2017_02.jpg",
+    "author": "Camelia.boban",
+    "license": "CC BY-SA 4.0",
+    "bytes": 111360
+  },
+  "pierogi": {
+    "article": "https://en.wikipedia.org/wiki/Pierogi",
+    "file": "https://commons.wikimedia.org/wiki/File:Pierogi_z_masłem_-_2023.03.31.jpg",
+    "author": "Aw58",
+    "license": "CC BY-SA 4.0",
+    "bytes": 230932
+  },
+  "baklava": {
+    "article": "https://en.wikipedia.org/wiki/Baklava",
+    "file": "https://commons.wikimedia.org/wiki/File:Baklava(1).png",
+    "author": "Sakaman",
+    "license": "CC BY-SA 4.0",
+    "bytes": 466360
+  },
+  "kimchi": {
+    "article": "https://en.wikipedia.org/wiki/Kimchi",
+    "file": "https://commons.wikimedia.org/wiki/File:Various_kimchi.jpg",
+    "author": "국립국어원",
+    "license": "CC BY-SA 2.0 kr",
+    "bytes": 368640
+  },
+  "butter-chicken": {
+    "article": "https://en.wikipedia.org/wiki/Butter_chicken",
+    "file": "https://commons.wikimedia.org/wiki/File:Butter_Chicken_&_Butter_Naan_-_Home_-_Chandigarh_-_India_-_0006.jpg",
+    "author": "Yuvraj Singh 97",
+    "license": "CC BY-SA 4.0",
+    "bytes": 342410
+  },
+  "peking-duck": {
+    "article": "https://en.wikipedia.org/wiki/Peking_duck",
+    "file": "https://commons.wikimedia.org/wiki/File:Peking_Duck,_2014_(02).jpg",
+    "author": "City Foodsters",
+    "license": "CC BY 2.0",
+    "bytes": 117841
+  },
+  "pho": {
+    "article": "https://en.wikipedia.org/wiki/Pho",
+    "file": "https://commons.wikimedia.org/wiki/File:Bowl_of_Meatball_pho.jpg",
+    "author": "SerraKnightz",
+    "license": "CC BY 4.0",
+    "bytes": 205171
+  },
+  "ceviche": {
+    "article": "https://en.wikipedia.org/wiki/Ceviche",
+    "file": "https://commons.wikimedia.org/wiki/File:Cebiche_de_corvina.JPG",
+    "author": "Picanteria karol",
+    "license": "CC BY-SA 4.0",
+    "bytes": 164533
+  },
+  "feijoada": {
+    "article": "https://en.wikipedia.org/wiki/Feijoada",
+    "file": "https://commons.wikimedia.org/wiki/File:Feijoada_à_transmontada.jpg",
+    "author": "Adrião",
+    "license": "CC BY 3.0",
+    "bytes": 477901
+  },
+  "asado": {
+    "article": "https://en.wikipedia.org/wiki/Asado",
+    "file": "https://commons.wikimedia.org/wiki/File:Asado_2005.jpg",
+    "author": "",
+    "license": "Attribution",
+    "bytes": 195275
+  },
+  "jollof": {
+    "article": "https://en.wikipedia.org/wiki/Jollof_rice",
+    "file": "https://commons.wikimedia.org/wiki/File:Jollof_Rice_with_Stew.jpg",
+    "author": "Noahalorwu",
+    "license": "CC BY-SA 4.0",
+    "bytes": 132053
+  },
+  "tagine": {
+    "article": "https://en.wikipedia.org/wiki/Tajine",
+    "file": "https://commons.wikimedia.org/wiki/File:Tajine-marocain-un-plat-varie-et-sain_(cropped).jpg",
+    "author": "BBouchra00",
+    "license": "CC BY-SA 4.0",
+    "bytes": 314789
+  },
+  "koshari": {
+    "article": "https://en.wikipedia.org/wiki/Koshary",
+    "file": "https://commons.wikimedia.org/wiki/File:Egyptian_food_Koshary.jpg",
+    "author": "Dina Said",
+    "license": "CC BY-SA 4.0",
+    "bytes": 250416
+  },
+  "injera": {
+    "article": "https://en.wikipedia.org/wiki/Injera",
+    "file": "https://commons.wikimedia.org/wiki/File:Injera_with_eight_kinds_of_stew.jpg",
+    "author": "Artem.G",
+    "license": "CC BY-SA 4.0",
+    "bytes": 453744
+  },
+  "bunny-chow": {
+    "article": "https://en.wikipedia.org/wiki/Bunny_chow",
+    "file": "https://commons.wikimedia.org/wiki/File:Quarter_Mutton_Bunny_Chow.jpg",
+    "author": "Luke Comins",
+    "license": "CC BY-SA 3.0",
+    "bytes": 164486
+  },
+  "fish-and-chips": {
+    "article": "https://en.wikipedia.org/wiki/Fish_and_chips",
+    "file": "https://commons.wikimedia.org/wiki/File:Fish_and_chips_blackpool.jpg",
+    "author": "Matthias Meckel",
+    "license": "CC BY-SA 4.0",
+    "bytes": 156426
+  },
+  "haggis": {
+    "article": "https://en.wikipedia.org/wiki/Haggis",
+    "file": "https://commons.wikimedia.org/wiki/File:Scotland_Haggis.jpg",
+    "author": "Chris Brown",
+    "license": "CC BY 2.0",
+    "bytes": 165780
+  },
+  "tikka-masala": {
+    "article": "https://en.wikipedia.org/wiki/Chicken_tikka_masala",
+    "file": "https://commons.wikimedia.org/wiki/File:Chicken_tikka_masala_(cropped).jpg",
+    "author": "Michael Hays",
+    "license": "CC BY 2.0",
+    "bytes": 156075
+  },
+  "irish-stew": {
+    "article": "https://en.wikipedia.org/wiki/Irish_stew",
+    "file": "https://commons.wikimedia.org/wiki/File:Irish_Beef_Stew_(34046928633).jpg",
+    "author": "A Healthier Michigan from Detroit, United States",
+    "license": "CC BY-SA 2.0",
+    "bytes": 143944
+  },
+  "meatballs": {
+    "article": "https://en.wikipedia.org/wiki/Swedish_meatballs",
+    "file": "https://commons.wikimedia.org/wiki/File:Holiday_Swedish_Meatballs_-_39843240661.jpg",
+    "author": "HarshLight",
+    "license": "CC BY 2.0",
+    "bytes": 134997
+  },
+  "smorrebrod": {
+    "article": "https://en.wikipedia.org/wiki/Smørrebrød",
+    "file": "https://commons.wikimedia.org/wiki/File:Ida_Davidsen_udsnit_af_glasmontren.JPG",
+    "author": "User:Nillerdk",
+    "license": "CC BY-SA 3.0",
+    "bytes": 174761
+  },
+  "fondue": {
+    "article": "https://en.wikipedia.org/wiki/Fondue",
+    "file": "https://commons.wikimedia.org/wiki/File:Fondue_dish.jpg",
+    "author": "Juliano Mendes",
+    "license": "CC BY 2.0",
+    "bytes": 164239
+  },
+  "schnitzel": {
+    "article": "https://en.wikipedia.org/wiki/Wiener_schnitzel",
+    "file": "https://commons.wikimedia.org/wiki/File:Wiener-Schnitzel02.jpg",
+    "author": "Kobako",
+    "license": "CC BY-SA 2.5",
+    "bytes": 198546
+  },
+  "pretzel": {
+    "article": "https://en.wikipedia.org/wiki/Pretzel",
+    "file": "https://commons.wikimedia.org/wiki/File:BrezelnSalz02_(cropped).JPG",
+    "author": "Sundar1",
+    "license": "CC BY-SA 3.0",
+    "bytes": 250141
+  },
+  "stroopwafel": {
+    "article": "https://en.wikipedia.org/wiki/Stroopwafel",
+    "file": "https://commons.wikimedia.org/wiki/File:Stroopwafels_01.jpg",
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "bytes": 168233
+  },
+  "waffles": {
+    "article": "https://en.wikipedia.org/wiki/Belgian_waffle",
+    "file": "https://commons.wikimedia.org/wiki/File:Waffle_with_strawberries_and_confectioner's_sugar.jpg",
+    "author": "Ralph Daily",
+    "license": "CC BY 2.0",
+    "bytes": 183085
+  },
+  "moussaka": {
+    "article": "https://en.wikipedia.org/wiki/Moussaka",
+    "file": "https://commons.wikimedia.org/wiki/File:MussakasMeMelitsanesKePatates01.JPG",
+    "author": "Robert Kindermann aka RobertK",
+    "license": "CC BY-SA 2.5",
+    "bytes": 135915
+  },
+  "borscht": {
+    "article": "https://en.wikipedia.org/wiki/Borscht",
+    "file": "https://commons.wikimedia.org/wiki/File:Borscht_served.jpg",
+    "author": "liz west from Boxborough, MA",
+    "license": "CC BY 2.0",
+    "bytes": 136463
+  },
+  "goulash": {
+    "article": "https://en.wikipedia.org/wiki/Goulash",
+    "file": "https://commons.wikimedia.org/wiki/File:Gulyas080.jpg",
+    "author": "Lily15",
+    "license": "CC BY-SA 3.0",
+    "bytes": 298369
+  },
+  "skyr": {
+    "article": "https://en.wikipedia.org/wiki/Skyr",
+    "file": "https://commons.wikimedia.org/wiki/File:Icelandic_Skyr.jpg",
+    "author": "IcelandicProvisions",
+    "license": "CC BY-SA 4.0",
+    "bytes": 36479
+  },
+  "fufu": {
+    "article": "https://en.wikipedia.org/wiki/Fufu",
+    "file": "https://commons.wikimedia.org/wiki/File:Wrapped_fufu.jpg",
+    "author": "daSupremo",
+    "license": "CC BY-SA 4.0",
+    "bytes": 20297
+  },
+  "poke": {
+    "article": "https://en.wikipedia.org/wiki/Poke_(dish)",
+    "file": "https://commons.wikimedia.org/wiki/File:Shoyu_and_onion_poke.jpg",
+    "author": "Aquateamhungerforce",
+    "license": "CC BY-SA 4.0",
+    "bytes": 30987
+  },
+  "mole": {
+    "article": "https://en.wikipedia.org/wiki/Mole_poblano",
+    "file": "https://commons.wikimedia.org/wiki/File:ChickRedMole.JPG",
+    "author": "AlejandroLinaresGarcia",
+    "license": "CC BY-SA 4.0",
+    "bytes": 92551
+  },
+  "pupusa": {
+    "article": "https://en.wikipedia.org/wiki/Pupusa",
+    "file": "https://commons.wikimedia.org/wiki/File:Pupusas_El_Salvador_Centro_America.JPG",
+    "author": "JMRAFFi",
+    "license": "CC BY-SA 4.0",
+    "bytes": 186277
+  },
+  "arepa": {
+    "article": "https://en.wikipedia.org/wiki/Arepa",
+    "file": "https://commons.wikimedia.org/wiki/File:Arepitas_Food_Macro.jpg",
+    "author": "Steven Depolo from Grand Rapids, MI, USA",
+    "license": "CC BY 2.0",
+    "bytes": 114497
+  },
+  "empanada": {
+    "article": "https://en.wikipedia.org/wiki/Empanada",
+    "file": "https://commons.wikimedia.org/wiki/File:Tapa_de_empanadillitas.JPG",
+    "author": "Tamorlan",
+    "license": "CC BY 3.0",
+    "bytes": 143724
+  },
+  "gelato": {
+    "article": "https://en.wikipedia.org/wiki/Gelato",
+    "file": "https://commons.wikimedia.org/wiki/File:CafeMia.jpg",
+    "author": "Cafemia",
+    "license": "CC BY-SA 3.0",
+    "bytes": 25418
+  },
+  "crepes": {
+    "article": "https://en.wikipedia.org/wiki/Crêpe",
+    "file": "https://commons.wikimedia.org/wiki/File:Crepes_dsc07085.jpg",
+    "author": "David Monniaux",
+    "license": "CC BY-SA 3.0",
+    "bytes": 125946
+  },
+  "dim-sum": {
+    "article": "https://en.wikipedia.org/wiki/Dim_sum",
+    "file": "https://commons.wikimedia.org/wiki/File:Chinese_DimSum_(9023590541).jpg",
+    "author": "LeonardKong",
+    "license": "CC BY 2.0",
+    "bytes": 154902
+  },
+  "xiaolongbao": {
+    "article": "https://en.wikipedia.org/wiki/Xiaolongbao",
+    "file": "https://commons.wikimedia.org/wiki/File:A_Xiaolongbao_from_The_Modern_Shanghai.jpg",
+    "author": "Peachyeung316",
+    "license": "CC BY-SA 4.0",
+    "bytes": 126065
+  },
+  "plov": {
+    "article": "https://en.wikipedia.org/wiki/Pilaf",
+    "file": "https://commons.wikimedia.org/wiki/File:Afghan_Palo.jpg",
+    "author": "Jost Wagner",
+    "license": "CC BY-SA 1.0",
+    "bytes": 94450
+  },
+  "kabsa": {
+    "article": "https://en.wikipedia.org/wiki/Kabsa",
+    "file": "https://commons.wikimedia.org/wiki/File:Machboos_(cropped).JPG",
+    "author": "Miansari66",
+    "license": "CC0",
+    "bytes": 247436
+  },
+  "banh-mi": {
+    "article": "https://en.wikipedia.org/wiki/Bánh_mì",
+    "file": "https://commons.wikimedia.org/wiki/File:Bánh_mì_thịt_nướng.png",
+    "author": "nsaum75¡שיחת!‎",
+    "license": "CC BY-SA 3.0",
+    "bytes": 1117527
+  },
+  "char-kway-teow": {
+    "article": "https://en.wikipedia.org/wiki/Char_kway_teow",
+    "file": "https://commons.wikimedia.org/wiki/File:Char_kway_teow.jpg",
+    "author": "Elizetang",
+    "license": "Public domain",
+    "bytes": 40509
+  },
+  "pavlova": {
+    "article": "https://en.wikipedia.org/wiki/Pavlova_(dessert)",
+    "file": "https://commons.wikimedia.org/wiki/File:Pavlova_dessert.JPG",
+    "author": "Hazel Fowler",
+    "license": "Public domain",
+    "bytes": 172164
+  },
+  "pastel-de-nata": {
+    "article": "https://en.wikipedia.org/wiki/Pastel_de_nata",
+    "file": "https://commons.wikimedia.org/wiki/File:Pasteis_de_Belem.jpg",
+    "author": "Mon Œil",
+    "license": "CC BY 2.0",
+    "bytes": 176218
+  },
+  "shakshuka": {
+    "article": "https://en.wikipedia.org/wiki/Shakshouka",
+    "file": "https://commons.wikimedia.org/wiki/File:Shakshuka_by_Calliopejen1.jpg",
+    "author": "Calliopejen1",
+    "license": "CC BY-SA 3.0",
+    "bytes": 160106
+  },
+  "nyama-choma": {
+    "article": "https://en.wikipedia.org/wiki/Nyama_choma",
+    "file": "https://commons.wikimedia.org/wiki/File:Goat_meat_being_roasted.jpg",
+    "author": "Samuel Kiongo",
+    "license": "CC BY-SA 4.0",
+    "bytes": 337071
+  },
+  "piri-piri": {
+    "article": "https://en.wikipedia.org/wiki/Piri_piri",
+    "file": "https://commons.wikimedia.org/wiki/File:2018-02-03_Chicken_Piri-Piri,_Albufeira_(2).JPG",
+    "author": "Kolforn (Kolforn)\nI'd appreciate if you could mail me (Kolforn@gmail.com) if you want to use this picture out of the Wikimedia project scope.\n\n\n\n This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license.\nYou are free:\nto share – to copy, distribute and transmit the work\nto remix – to adapt the work\nUnder the following conditions:\nattribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nshare alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original.https://creativecommons.org/licenses/by-sa/4.0CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 truetrue",
+    "license": "CC BY-SA 4.0",
+    "bytes": 235175
+  },
+  "texas-bbq": {
+    "article": "https://en.wikipedia.org/wiki/Brisket",
+    "file": "https://commons.wikimedia.org/wiki/File:Brisketphoto.jpg",
+    "author": "Josh Evnin from Chicago, IL, USA",
+    "license": "CC BY-SA 2.0",
+    "bytes": 260841
+  },
+  "key-lime-pie": {
+    "article": "https://en.wikipedia.org/wiki/Key_lime_pie",
+    "file": "https://commons.wikimedia.org/wiki/File:Slice_of_Key_Lime_Pie.jpg",
+    "author": "Louiemantia",
+    "license": "CC BY-SA 4.0",
+    "bytes": 129906
+  },
+  "jerk-chicken": {
+    "article": "https://en.wikipedia.org/wiki/Jerk_(cooking)",
+    "file": "https://commons.wikimedia.org/wiki/File:BBQJerk_Chicken.jpg",
+    "author": "OUTography.com from Gilbert, AZ, USA",
+    "license": "CC BY 2.0",
+    "bytes": 320697
+  },
+  "ropa-vieja": {
+    "article": "https://en.wikipedia.org/wiki/Ropa_vieja",
+    "file": "https://commons.wikimedia.org/wiki/File:Cubanfood.jpg",
+    "author": "Marc Averette",
+    "license": "Public domain",
+    "bytes": 172448
+  },
+  "churros": {
+    "article": "https://en.wikipedia.org/wiki/Churro",
+    "file": "https://commons.wikimedia.org/wiki/File:Chocolate_con_churros_(27343655726).jpg",
+    "author": "Joy",
+    "license": "CC BY 2.0",
+    "bytes": 168517
+  },
+  "ramen": {
+    "article": "https://en.wikipedia.org/wiki/Tonkotsu_ramen",
+    "file": "https://commons.wikimedia.org/wiki/File:Tonkotsu_ramen.JPG",
+    "author": "No machine-readable author provided. Schellack assumed (based on copyright claims).",
+    "license": "Public domain",
+    "bytes": 111931
+  },
+  "laksa": {
+    "article": "https://en.wikipedia.org/wiki/Laksa",
+    "file": "https://commons.wikimedia.org/wiki/File:Nyonya_Laksa.jpg",
+    "author": "Giddy98",
+    "license": "CC BY-SA 4.0",
+    "bytes": 320461
+  },
+  "nasi-goreng": {
+    "article": "https://en.wikipedia.org/wiki/Nasi_goreng",
+    "file": "https://commons.wikimedia.org/wiki/File:Nasi_Goreng_Kampung_(11967588375).jpg",
+    "author": "shankar s. from Dubai, united arab emirates",
+    "license": "CC BY 2.0",
+    "bytes": 200459
+  },
+  "adobo": {
+    "article": "https://en.wikipedia.org/wiki/Philippine_adobo",
+    "file": "https://commons.wikimedia.org/wiki/File:Adobo_DSCF4391.jpg",
+    "author": "Joy D. Ganaden",
+    "license": "CC BY-SA 4.0",
+    "bytes": 139184
+  },
+  "momo": {
+    "article": "https://en.wikipedia.org/wiki/Momo_(food)",
+    "file": "https://commons.wikimedia.org/wiki/File:Momo_nepal.jpg",
+    "author": "Kushal Goyal",
+    "license": "CC BY-SA 3.0",
+    "bytes": 177342
+  },
+  "biryani": {
+    "article": "https://en.wikipedia.org/wiki/Hyderabadi_biryani",
+    "file": "https://commons.wikimedia.org/wiki/File:Hyderabadi_Chicken_Biryani.jpg",
+    "author": "Garrett Ziegler from New York, United States",
+    "license": "CC BY 2.0",
+    "bytes": 185295
+  },
+  "khachapuri": {
+    "article": "https://en.wikipedia.org/wiki/Khachapuri",
+    "file": "https://commons.wikimedia.org/wiki/File:Old_Tbilisi,_Georgian_khachapuri,_Georgia.jpg",
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "bytes": 180764
+  },
+  "tahdig": {
+    "article": "https://en.wikipedia.org/wiki/Scorched_rice",
+    "file": "https://commons.wikimedia.org/wiki/File:Ailin15VeganRiceWithTahdig.JPG",
+    "author": "AilinParsa",
+    "license": "CC0",
+    "bytes": 160564
+  },
+  "mansaf": {
+    "article": "https://en.wikipedia.org/wiki/Mansaf",
+    "file": "https://commons.wikimedia.org/wiki/File:Mansaf,_the_traditional_dish_of_Jordan.jpg",
+    "author": "Jktab",
+    "license": "CC BY-SA 4.0",
+    "bytes": 264352
+  },
+  "pelmeni": {
+    "article": "https://en.wikipedia.org/wiki/Pelmeni",
+    "file": "https://commons.wikimedia.org/wiki/File:Pelmeni_Russian.jpg",
+    "author": "Eugene Kim @ Flickr",
+    "license": "CC BY 2.0",
+    "bytes": 129801
+  },
+  "meat-pie": {
+    "article": "https://en.wikipedia.org/wiki/Meat_pie_(Australia_and_New_Zealand)",
+    "file": "https://commons.wikimedia.org/wiki/File:Meat_pie.jpg",
+    "author": "fir0002  flagstaffotos [at] gmail.com\n\t\tCanon 20D + Canon 17-40mm f/4 L",
+    "license": "GFDL 1.2",
+    "bytes": 276719
+  },
+  "lamington": {
+    "article": "https://en.wikipedia.org/wiki/Lamington",
+    "file": "https://commons.wikimedia.org/wiki/File:Mocha_Flake_amingtons.jpg",
+    "author": "Zeitgeistlondon",
+    "license": "CC BY-SA 3.0",
+    "bytes": 196458
+  },
+  "kokoda": {
+    "article": "https://en.wikipedia.org/wiki/Kokoda_(food)",
+    "file": "https://commons.wikimedia.org/wiki/File:Poisson_cru_au_lait_de_coco.jpg",
+    "author": "Eric Chan",
+    "license": "CC BY 2.0",
+    "bytes": 79838
+  }
+}
