@@ -1,42 +1,64 @@
 <script lang="ts">
-  import { Confetti } from "svelte-confetti";
+  import { onMount } from "svelte";
 
-  import "./recess-ds.css";
-
+  import {
+    dishesForDay,
+    loadSavedGame,
+    msUntilTomorrow,
+    practiceDishes,
+    ROUNDS_PER_GAME,
+    saveGame,
+    todayNumber,
+    type SavedRound,
+  } from "./daily";
   import { DISHES, type Dish } from "./dishes";
-
   import DishGlobe from "./DishGlobe.svelte";
   import { distanceKm, MAX_ROUND_SCORE, scoreForDistance, type LatLon } from "./geo";
   import { countryNameAt } from "./world";
 
-  const ROUNDS_PER_GAME = 5;
-
-  type RoundResult = { dish: Dish; distance: number; points: number; foundCountry: boolean };
+  type RoundResult = { dish: Dish; distance: number; points: number; tapped: string | null };
   type Phase = "start" | "guessing" | "revealed" | "done";
+
+  const practice =
+    typeof location !== "undefined" && new URLSearchParams(location.search).has("practice");
+  const day = todayNumber();
 
   let phase = $state<Phase>("start");
   let rounds = $state<Dish[]>([]);
   let roundIndex = $state(0);
   let guess = $state<LatLon | null>(null);
   let results = $state<RoundResult[]>([]);
+  let alreadyPlayed = $state(false);
   let lightbox = $state<{ src: string; alt: string } | null>(null);
+  let countdown = $state(msUntilTomorrow());
 
   const dish = $derived(rounds[roundIndex] ?? null);
   const totalScore = $derived(results.reduce((sum, r) => sum + r.points, 0));
   const lastResult = $derived(results[results.length - 1] ?? null);
   const maxScore = ROUNDS_PER_GAME * MAX_ROUND_SCORE;
 
-  function shuffled<T>(list: T[]): T[] {
-    const copy = [...list];
-    for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
+  onMount(() => {
+    if (!practice) {
+      const saved = loadSavedGame();
+      if (saved) {
+        restoreSaved(saved.rounds);
+        alreadyPlayed = true;
+        phase = "done";
+      }
     }
-    return copy;
+    const tick = setInterval(() => (countdown = msUntilTomorrow()), 1000);
+    return () => clearInterval(tick);
+  });
+
+  function restoreSaved(saved: SavedRound[]) {
+    results = saved.flatMap((round) => {
+      const d = DISHES.find((candidate) => candidate.id === round.id);
+      return d ? [{ dish: d, distance: round.distance, points: round.points, tapped: null }] : [];
+    });
   }
 
   function startGame() {
-    rounds = shuffled(DISHES).slice(0, ROUNDS_PER_GAME);
+    rounds = practice ? practiceDishes() : dishesForDay(day);
     results = [];
     roundIndex = 0;
     guess = null;
@@ -51,17 +73,27 @@
   function lockIn() {
     if (!guess || !dish) return;
     const distance = Math.round(distanceKm(guess, dish));
-    // Country-first scoring: land anywhere in the origin country and it's a
-    // bullseye; otherwise distance to the origin city drives partial credit.
-    const tappedCountry = countryNameAt(guess.lat, guess.lon);
-    const foundCountry = tappedCountry !== null && tappedCountry === dish.country;
-    const points = foundCountry ? MAX_ROUND_SCORE : scoreForDistance(distance);
-    results = [...results, { dish, distance, points, foundCountry }];
+    results = [
+      ...results,
+      {
+        dish,
+        distance,
+        points: scoreForDistance(distance),
+        tapped: countryNameAt(guess.lat, guess.lon),
+      },
+    ];
     phase = "revealed";
   }
 
   function nextRound() {
     if (roundIndex + 1 >= rounds.length) {
+      if (!practice) {
+        saveGame({
+          day,
+          rounds: results.map((r) => ({ id: r.dish.id, distance: r.distance, points: r.points })),
+          total: totalScore,
+        });
+      }
       phase = "done";
       return;
     }
@@ -71,16 +103,16 @@
   }
 
   function verdictFor(result: RoundResult): string {
-    if (result.foundCountry || result.points >= MAX_ROUND_SCORE) return "Bullseye!";
-    if (result.points >= 850) return "So close!";
-    if (result.points >= 600) return "Nice one!";
-    if (result.points >= 350) return "Warm...";
-    if (result.points >= 120) return "Getting chilly";
-    return "Way off the map!";
+    if (result.points >= MAX_ROUND_SCORE) return "Bullseye";
+    if (result.points >= 850) return "Razor close";
+    if (result.points >= 600) return "Close";
+    if (result.points >= 350) return "Same neighborhood";
+    if (result.points >= 120) return "Wrong region";
+    return "Way off";
   }
 
   function finalVerdict(total: number): string {
-    if (total >= 4500) return "World-class food explorer";
+    if (total >= 4500) return "World-class food geographer";
     if (total >= 3500) return "Globetrotting gourmet";
     if (total >= 2500) return "Seasoned traveler";
     if (total >= 1200) return "Curious taster";
@@ -89,6 +121,12 @@
 
   function formatKm(km: number): string {
     return `${km.toLocaleString()} km`;
+  }
+
+  function formatCountdown(ms: number): string {
+    const s = Math.floor(ms / 1000);
+    const pad = (n: number) => String(n).padStart(2, "0");
+    return `${pad(Math.floor(s / 3600))}:${pad(Math.floor((s % 3600) / 60))}:${pad(s % 60)}`;
   }
 
   function dishPhoto(d: Dish): string {
@@ -112,10 +150,11 @@
               ? "🟡"
               : r.points >= 300
                 ? "🟠"
-                : "⚪"
+                : "⚫"
       )
       .join("");
-    const text = `🌍🍜 DishTap — I scored ${totalScore.toLocaleString()}/${maxScore.toLocaleString()}\n${squares}\nThink you know where food comes from? Play: ${location.origin}${location.pathname}`;
+    const url = `${location.origin}${location.pathname}`;
+    const text = `DishTap #${day} — ${totalScore.toLocaleString()}/${maxScore.toLocaleString()}\n${squares}\nWhere was it born? ${url}`;
     try {
       await navigator.clipboard.writeText(text);
       shareState = "copied";
@@ -132,24 +171,23 @@
 </script>
 
 <svelte:head>
-  <title>DishTap — tap the country the dish was born in</title>
-  <meta
-    name="description"
-    content="A geography game about food: we name a famous dish, you spin the globe and tap the country it comes from."
-  />
+  <title>DishTap #{day} — the daily food-geography game</title>
 </svelte:head>
 
 <svelte:window onkeydown={(e) => e.key === "Escape" && (lightbox = null)} />
 
-<div class="recess-ds dishtap-root">
+<div class="dishtap-root">
   <header class="topbar">
     <div class="wordmark">
-      Dish<span class="ds-grad-text">Tap</span>
+      Dish<span class="accent-text">Tap</span> <span class="daynum">#{day}</span>
     </div>
+    {#if practice}
+      <span class="chip practice-chip">Practice</span>
+    {/if}
     {#if phase === "guessing" || phase === "revealed"}
       <div class="topbar-right">
-        <span class="round-chip">Round {roundIndex + 1} / {rounds.length}</span>
-        <div class="scorebox">
+        <span class="chip">Round {roundIndex + 1} / {rounds.length}</span>
+        <div class="chip scorebox">
           <span class="scorebox-label">Score</span>
           <span class="scorebox-value">{totalScore.toLocaleString()}</span>
         </div>
@@ -159,7 +197,7 @@
 
   {#if phase === "guessing" && dish}
     <div class="prompt-row">
-      <div class="prompt ds-card">
+      <div class="prompt card">
         <button
           class="photo-btn"
           onclick={() => dish && openLightbox(dish)}
@@ -168,8 +206,8 @@
           <img class="prompt-photo" src={dishPhoto(dish)} alt={dish.name} />
         </button>
         <div>
-          <div class="prompt-label">Which country does this come from?</div>
-          <div class="prompt-name">{dish.emoji} {dish.name}</div>
+          <div class="prompt-label">Where was this born?</div>
+          <div class="prompt-name">{dish.name}</div>
         </div>
       </div>
     </div>
@@ -177,7 +215,7 @@
 
   <div class="stage-row">
     <div class="globe-stage">
-      <div class="globe-shadow"></div>
+      <div class="globe-glow"></div>
       <DishGlobe
         guess={phase === "guessing" || phase === "revealed" ? guess : null}
         answer={phase === "revealed" ? dish : null}
@@ -189,12 +227,7 @@
     </div>
 
     {#if phase === "revealed" && lastResult}
-      <aside class="reveal ds-card">
-        {#if lastResult.points >= 850}
-          <div class="confetti-anchor">
-            <Confetti x={[-1, 1]} y={[-0.5, 1]} fallDistance="80px" />
-          </div>
-        {/if}
+      <aside class="reveal card">
         <button
           class="photo-btn"
           onclick={() => lastResult && openLightbox(lastResult.dish)}
@@ -204,23 +237,22 @@
         </button>
         <div class="reveal-head">
           <span class="reveal-verdict">{verdictFor(lastResult)}</span>
-          <span class="reveal-points ds-grad-text">+{lastResult.points.toLocaleString()}</span>
+          <span class="reveal-points accent-text">+{lastResult.points.toLocaleString()}</span>
         </div>
         <div class="reveal-answer">
-          {lastResult.dish.emoji}
           {lastResult.dish.name} · <strong>{lastResult.dish.place}</strong>
         </div>
         <div class="reveal-distance">
-          {#if lastResult.foundCountry}
-            You found <strong>{lastResult.dish.country}</strong>!
+          {#if lastResult.points >= MAX_ROUND_SCORE}
+            <strong>{formatKm(lastResult.distance)}</strong> from the source — dead on
           {:else}
-            Your tap was <strong>{formatKm(lastResult.distance)}</strong> away — it's in
-            <strong>{lastResult.dish.country}</strong>
+            Your tap{lastResult.tapped ? ` (${lastResult.tapped})` : ""} was
+            <strong>{formatKm(lastResult.distance)}</strong> away
           {/if}
         </div>
-        <p class="ds-body reveal-fact">{lastResult.dish.fact}</p>
-        <button class="ds-btn ds-btn-ink ds-btn-block" onclick={nextRound}>
-          {roundIndex + 1 >= rounds.length ? "See my results" : "Next dish ➔"}
+        <p class="reveal-fact">{lastResult.dish.fact}</p>
+        <button class="btn btn-block" onclick={nextRound}>
+          {roundIndex + 1 >= rounds.length ? "See my results" : "Next dish →"}
         </button>
       </aside>
     {/if}
@@ -228,24 +260,24 @@
 
   {#if phase === "guessing"}
     <div class="actionbar">
-      <button class="ds-btn ds-btn-ink ds-btn-lg" disabled={!guess} onclick={lockIn}>
+      <button class="btn btn-lg" disabled={!guess} onclick={lockIn}>
         {guess ? "Lock it in" : "Tap the globe to guess"}
       </button>
-      <span class="action-hint">{guess ? "Tap again to move your pin" : " "}</span>
+      <span class="action-hint">{guess ? "Tap again to move your pin" : " "}</span>
     </div>
   {/if}
 
   {#if phase === "start"}
-    <div class="panel intro ds-card">
-      <div class="intro-emoji">🌍🍜</div>
-      <h1 class="intro-title">
-        Where in the world<br />was it <span class="ds-grad-text">born?</span>
-      </h1>
-      <p class="ds-body intro-copy">
-        We name a famous dish. You spin the globe and tap the country it comes from. Land anywhere
-        in the right country for full points — {ROUNDS_PER_GAME} dishes per game.
+    <div class="panel intro card">
+      <div class="intro-eyebrow">Daily puzzle #{day}</div>
+      <h1 class="intro-title">Where was it <span class="accent-text">born?</span></h1>
+      <p class="intro-copy">
+        Five dishes. Spin the globe and pin each one's home city — the closer your tap, the more of
+        the 1,000 points you keep. Same five dishes for everyone, one game a day.
       </p>
-      <button class="ds-btn ds-btn-ink ds-btn-lg" onclick={startGame}>Start tasting ➔</button>
+      <button class="btn btn-lg" onclick={startGame}>
+        {practice ? "Start practice round" : "Play today's five"}
+      </button>
       <p class="intro-credit">
         Food photos from Wikipedia / Wikimedia Commons · map data © Natural Earth
       </p>
@@ -253,41 +285,45 @@
   {/if}
 
   {#if phase === "done"}
-    <div class="panel summary ds-card">
-      {#if totalScore >= 3500}
-        <div class="confetti-anchor">
-          <Confetti x={[-1.5, 1.5]} y={[-0.5, 1.5]} amount={80} fallDistance="120px" />
-        </div>
-      {/if}
-      <div class="summary-eyebrow">Final score</div>
+    <div class="panel summary card">
+      <div class="summary-eyebrow">
+        {practice ? "Practice result" : `DishTap #${day} — final score`}
+      </div>
       <div class="summary-score">
-        <span class="ds-grad-text">{totalScore.toLocaleString()}</span>
+        <span class="accent-text">{totalScore.toLocaleString()}</span>
         <span class="summary-max">/ {maxScore.toLocaleString()}</span>
       </div>
       <div class="summary-verdict">{finalVerdict(totalScore)}</div>
-      <div class="ds-progress summary-progress">
-        <div class="ds-progress-fill" style={`width: ${(totalScore / maxScore) * 100}%`}></div>
+      <div class="progress">
+        <div class="progress-fill" style={`width: ${(totalScore / maxScore) * 100}%`}></div>
       </div>
       <ul class="summary-rounds">
         {#each results as result (result.dish.id)}
           <li>
             <img class="summary-thumb" src={dishPhoto(result.dish)} alt={result.dish.name} />
             <span class="summary-dish">{result.dish.name}</span>
-            <span class="summary-detail">
-              {result.foundCountry ? result.dish.country : formatKm(result.distance)}
-            </span>
+            <span class="summary-detail">{formatKm(result.distance)}</span>
             <span class="summary-points">+{result.points.toLocaleString()}</span>
           </li>
         {/each}
       </ul>
-      <button class="ds-btn ds-btn-ink ds-btn-lg ds-btn-block" onclick={shareScore}>
-        {shareState === "copied"
-          ? "Copied! Send it to a friend"
-          : shareState === "failed"
-            ? "Couldn't copy — try again"
-            : "Share my score"}
-      </button>
-      <button class="ds-btn ds-btn-out ds-btn-block" onclick={startGame}> Play again </button>
+      {#if !practice}
+        <button class="btn btn-lg btn-block" onclick={shareScore}>
+          {shareState === "copied"
+            ? "Copied — send it to a friend"
+            : shareState === "failed"
+              ? "Couldn't copy — try again"
+              : "Share my score"}
+        </button>
+        <div class="countdown">
+          {alreadyPlayed ? "You've played today." : "That's today's game."}
+          Next five dishes in <strong>{formatCountdown(countdown)}</strong>
+        </div>
+        <a class="ghost-link" href="?practice=1">Practice with random dishes</a>
+      {:else}
+        <button class="btn btn-lg btn-block" onclick={startGame}>Play another practice</button>
+        <a class="ghost-link" href={location.pathname}>Back to today's game</a>
+      {/if}
     </div>
   {/if}
 
@@ -301,67 +337,135 @@
 
 <style>
   .dishtap-root {
+    --bg: #070b12;
+    --card: #10161f;
+    --card-border: rgba(255, 255, 255, 0.09);
+    --text: #edf2f7;
+    --text-2: rgba(237, 242, 247, 0.72);
+    --text-3: rgba(237, 242, 247, 0.5);
+    --accent: #22d3ee;
+
     position: relative;
     display: flex;
     flex-direction: column;
     height: 100dvh;
     overflow: hidden;
-    background: var(--ds-bg);
-    font-family: var(--ds-font-body);
-    color: var(--ds-ink);
+    background: var(--bg);
+    font-family: "Satoshi", ui-sans-serif, system-ui, sans-serif;
+    color: var(--text);
+  }
+
+  .accent-text {
+    background: linear-gradient(90deg, #22d3ee, #7dd3fc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 24px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: var(--text);
+    color: #0a0f16;
+    font: 600 14px "Satoshi", sans-serif;
+    cursor: pointer;
+    transition:
+      transform 160ms ease,
+      opacity 160ms ease;
+  }
+  .btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+  .btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  .btn-lg {
+    padding: 16px 30px;
+    font-size: 15px;
+  }
+  .btn-block {
+    display: flex;
+    width: 100%;
+  }
+  .ghost-link {
+    font-size: 13px;
+    color: var(--text-3);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .ghost-link:hover {
+    color: var(--text-2);
   }
 
   .topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
     padding: 14px 22px;
     flex-shrink: 0;
   }
   .wordmark {
     font-weight: 900;
-    font-size: 22px;
+    font-size: 21px;
     letter-spacing: -0.03em;
+  }
+  .daynum {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text-3);
+    margin-left: 4px;
   }
   .topbar-right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
   }
-  .round-chip {
+  .chip {
     padding: 6px 14px;
-    border-radius: var(--ds-radius-pill);
-    background: var(--ds-card);
-    border: 1px solid var(--ds-rule);
-    box-shadow: var(--ds-shadow-soft);
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
     font-weight: 600;
     font-size: 13px;
-    color: var(--ds-ink-2);
+    color: var(--text-2);
+  }
+  .practice-chip {
+    color: var(--accent);
+    border-color: rgba(34, 211, 238, 0.4);
   }
   .scorebox {
     display: flex;
     align-items: baseline;
     gap: 8px;
-    padding: 6px 14px;
-    border-radius: var(--ds-radius-pill);
-    background: var(--ds-card);
-    border: 1px solid var(--ds-rule);
-    box-shadow: var(--ds-shadow-soft);
   }
   .scorebox-label {
     font-weight: 900;
     font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--ds-ink-3);
+    letter-spacing: 0.05em;
+    color: var(--text-3);
   }
   .scorebox-value {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 15px;
+    color: var(--text);
     font-variant-numeric: tabular-nums;
   }
 
-  /* ── the guessing chrome sits AROUND the globe, never over it ─────────── */
   .prompt-row {
     display: flex;
     justify-content: center;
@@ -372,15 +476,15 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 10px 18px 10px 10px;
+    padding: 10px 20px 10px 10px;
     max-width: min(92vw, 480px);
   }
   .prompt-photo {
     width: 64px;
     height: 64px;
     object-fit: cover;
-    border-radius: var(--ds-radius-sm);
-    border: 1px solid var(--ds-rule);
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
     flex-shrink: 0;
     display: block;
   }
@@ -388,8 +492,8 @@
     font-weight: 900;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--ds-ink-3);
+    letter-spacing: 0.05em;
+    color: var(--text-3);
   }
   .prompt-name {
     font-weight: 700;
@@ -409,15 +513,15 @@
     min-width: 0;
     position: relative;
   }
-  .globe-shadow {
+  .globe-glow {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: min(76vmin, 620px);
-    height: min(76vmin, 620px);
+    width: min(85vmin, 700px);
+    height: min(85vmin, 700px);
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(5, 5, 5, 0.1) 0%, rgba(5, 5, 5, 0) 62%);
+    background: radial-gradient(circle, rgba(56, 132, 255, 0.16) 30%, rgba(56, 132, 255, 0) 68%);
     pointer-events: none;
   }
 
@@ -431,10 +535,9 @@
   }
   .action-hint {
     font-size: 12.5px;
-    color: var(--ds-ink-3);
+    color: var(--text-3);
   }
 
-  /* ── reveal: a side panel next to the globe, not on top of it ─────────── */
   .reveal {
     width: min(400px, 38vw);
     align-self: center;
@@ -446,11 +549,6 @@
     flex-direction: column;
     gap: 8px;
     position: relative;
-  }
-  .confetti-anchor {
-    position: absolute;
-    top: 0;
-    left: 50%;
   }
   .photo-btn {
     border: 0;
@@ -464,8 +562,8 @@
     width: 100%;
     height: 128px;
     object-fit: cover;
-    border-radius: var(--ds-radius-sm);
-    border: 1px solid var(--ds-rule);
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
     margin-bottom: 4px;
     display: block;
   }
@@ -487,19 +585,19 @@
   }
   .reveal-answer {
     font-size: 15px;
-    color: var(--ds-ink-2);
+    color: var(--text-2);
   }
   .reveal-distance {
     font-size: 14px;
-    color: var(--ds-ink-2);
+    color: var(--text-2);
   }
   .reveal-fact {
     margin: 2px 0 8px;
     font-size: 14px;
-    color: var(--ds-ink-3);
+    line-height: 1.5;
+    color: var(--text-3);
   }
 
-  /* ── floating panels (start / summary only) ───────────────────────────── */
   .panel {
     position: absolute;
     left: 50%;
@@ -516,8 +614,12 @@
     align-items: center;
     gap: 14px;
   }
-  .intro-emoji {
-    font-size: 40px;
+  .intro-eyebrow {
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
   }
   .intro-title {
     font-weight: 900;
@@ -528,21 +630,24 @@
   }
   .intro-copy {
     margin: 0;
-    max-width: 36ch;
+    max-width: 38ch;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-2);
   }
   .intro-credit {
     margin: 4px 0 0;
     font-size: 11px;
-    color: var(--ds-ink-4);
+    color: var(--text-3);
   }
 
   .summary {
     top: 50%;
     transform: translate(-50%, -50%);
     width: min(92vw, 480px);
-    max-height: min(86dvh, 640px);
+    max-height: min(88dvh, 660px);
     overflow-y: auto;
-    padding: 30px 28px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -553,8 +658,8 @@
     font-weight: 900;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--ds-ink-3);
+    letter-spacing: 0.08em;
+    color: var(--text-3);
   }
   .summary-score {
     font-weight: 900;
@@ -566,19 +671,26 @@
   .summary-max {
     font-size: 18px;
     font-weight: 600;
-    color: var(--ds-ink-4);
+    color: var(--text-3);
   }
   .summary-verdict {
     font-weight: 600;
     font-size: 16px;
-    color: var(--ds-ink-2);
+    color: var(--text-2);
   }
-  .summary-progress {
-    /* .ds-progress ships flex:1 (basis 0) which collapses to 0-height in this
-       column-flex card — pin it back to its intended 8px bar. */
-    flex: none;
+  .progress {
     width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
     margin: 6px 0 4px;
+  }
+  .progress-fill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #22d3ee, #7dd3fc);
   }
   .summary-rounds {
     width: 100%;
@@ -591,7 +703,7 @@
     align-items: center;
     gap: 10px;
     padding: 9px 2px;
-    border-bottom: 1px solid var(--ds-rule);
+    border-bottom: 1px solid var(--card-border);
     font-size: 14px;
   }
   .summary-rounds li:last-child {
@@ -602,7 +714,7 @@
     height: 36px;
     object-fit: cover;
     border-radius: 8px;
-    border: 1px solid var(--ds-rule);
+    border: 1px solid var(--card-border);
     flex-shrink: 0;
   }
   .summary-dish {
@@ -614,7 +726,7 @@
     text-overflow: ellipsis;
   }
   .summary-detail {
-    color: var(--ds-ink-3);
+    color: var(--text-3);
     font-size: 13px;
     font-variant-numeric: tabular-nums;
   }
@@ -624,15 +736,22 @@
     min-width: 58px;
     text-align: right;
   }
+  .countdown {
+    font-size: 13.5px;
+    color: var(--text-2);
+  }
+  .countdown strong {
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+  }
 
-  /* ── lightbox ─────────────────────────────────────────────────────────── */
   .lightbox {
     position: fixed;
     inset: 0;
     z-index: 50;
     border: 0;
     padding: 24px;
-    background: rgba(5, 5, 5, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -644,9 +763,9 @@
     max-width: min(92vw, 880px);
     max-height: 80dvh;
     object-fit: contain;
-    border-radius: var(--ds-radius);
-    background: #fff;
-    box-shadow: 0 24px 60px rgba(5, 5, 5, 0.4);
+    border-radius: 14px;
+    background: #10161f;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
   }
   .lightbox-caption {
     font-weight: 700;

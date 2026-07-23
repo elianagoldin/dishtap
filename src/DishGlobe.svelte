@@ -23,8 +23,8 @@
     onTap?: (point: LatLon) => void;
   } = $props();
 
-  const INK = 0x050505;
-  const VIOLET = 0x7c3aed;
+  const GUESS_COLOR = 0xffffff;
+  const ANSWER_COLOR = 0x22d3ee;
 
   let wrapper = $state<HTMLDivElement | null>(null);
   let ready = $state(false);
@@ -54,23 +54,15 @@
     duration: number;
   } | null = null;
 
-  // Classic-globe country palette; adjacency coloring keeps neighbors distinct.
-  const OCEAN = "#8fc0e8";
-  const ICE = "#eef6fa";
-  const PALETTE = [
-    "#f2d791", // sand
-    "#a9d6a0", // sage
-    "#f2ad96", // coral
-    "#c9b5e8", // lilac
-    "#9edcc0", // mint
-    "#f3aec6", // rose
-    "#d8d08a", // khaki
-    "#f7c489", // apricot
-  ];
+  // Serious dark-map palette: deep ocean, slate land, crisp light borders.
+  const OCEAN = "#152e4d";
+  const LAND = "#2a3540";
+  const BORDER = "rgba(255, 255, 255, 0.42)";
 
-  // Paint the world once onto an equirectangular canvas: blue ocean, colored
-  // countries, ink borders, country-name labels. Standard sphere UVs map it
-  // 1:1 with the latLonToXyz convention (u = (lon+180)/360, v pole-down).
+  // Paint the world once onto an equirectangular canvas: dark ocean + faint
+  // graticule, uniform slate landmasses, light country borders, no labels.
+  // Standard sphere UVs map it 1:1 with the latLonToXyz convention
+  // (u = (lon+180)/360, v pole-down).
   function makeWorldTexture(): THREE.CanvasTexture {
     const W = 4096;
     const H = 2048;
@@ -86,8 +78,8 @@
     ctx.fillStyle = OCEAN;
     ctx.fillRect(0, 0, W, H);
 
-    // graticule (ends up ocean-only — land fills paint over it)
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.45)";
+    // graticule (ends up ocean-only - land fills paint over it)
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.07)";
     ctx.lineWidth = 1.5;
     for (let lon = -150; lon <= 180; lon += 30) {
       const [x] = px(lon, 0);
@@ -106,36 +98,22 @@
 
     ctx.lineJoin = "round";
     ctx.lineCap = "round";
-    const countries = worldCountries();
-    const labels: Array<{ name: string; lon: number; lat: number; size: number }> = [];
-
-    for (const country of countries) {
+    for (const country of worldCountries()) {
       const path = new Path2D();
-      let bestRing: [number, number][] = [];
-      let bestSpan = -1;
       for (const ring of country.rings) {
-        // Unwrap rings that cross the antimeridian (Russia, Fiji, …) so they
-        // don't streak across the map, then paint at ±W so both edges of the
+        // Unwrap rings that cross the antimeridian (Russia, Fiji, ...) so they
+        // don't streak across the map, then paint at +-W so both edges of the
         // wrapping texture stay covered.
         let previousLon = ring[0][0];
         let offset = 0;
-        const unwrapped = ring.map(([lon, lat], i) => {
+        const points = ring.map(([lon, lat], i) => {
           if (i > 0) {
             if (lon - previousLon > 180) offset -= 360;
             else if (lon - previousLon < -180) offset += 360;
           }
           previousLon = lon;
-          return [lon + offset, lat] as [number, number];
+          return px(lon + offset, lat);
         });
-        const lons = unwrapped.map((p) => p[0]);
-        const lats = unwrapped.map((p) => p[1]);
-        const span =
-          (Math.max(...lons) - Math.min(...lons)) * (Math.max(...lats) - Math.min(...lats));
-        if (span > bestSpan) {
-          bestSpan = span;
-          bestRing = unwrapped;
-        }
-        const points = unwrapped.map(([lon, lat]) => px(lon, lat));
         for (const shift of [-W, 0, W]) {
           points.forEach(([x, y], i) => {
             if (i === 0) path.moveTo(x + shift, y);
@@ -144,69 +122,21 @@
           path.closePath();
         }
       }
-      const isIce = country.name === "Antarctica" || country.name === "Greenland";
-      ctx.fillStyle = isIce ? ICE : PALETTE[country.colorIndex];
+      ctx.fillStyle = LAND;
       ctx.fill(path, "evenodd");
-      ctx.strokeStyle = "rgba(5, 5, 5, 0.4)";
-      ctx.lineWidth = 2;
+      ctx.strokeStyle = BORDER;
+      ctx.lineWidth = 1.75;
       ctx.stroke(path);
-
-      if (country.name && bestRing.length) {
-        // centroid of the largest ring, sized by its angular footprint
-        let area = 0;
-        let cx = 0;
-        let cy = 0;
-        for (let i = 0, j = bestRing.length - 1; i < bestRing.length; j = i++) {
-          const cross = bestRing[j][0] * bestRing[i][1] - bestRing[i][0] * bestRing[j][1];
-          area += cross;
-          cx += (bestRing[j][0] + bestRing[i][0]) * cross;
-          cy += (bestRing[j][1] + bestRing[i][1]) * cross;
-        }
-        if (Math.abs(area) > 1e-7) {
-          cx /= 3 * area;
-          cy /= 3 * area;
-          let lon = cx;
-          if (lon > 180) lon -= 360;
-          if (lon < -180) lon += 360;
-          const footprint = Math.sqrt(bestSpan * Math.max(0.15, Math.cos((cy * Math.PI) / 180)));
-          labels.push({
-            name: country.name,
-            lon,
-            lat: cy,
-            size: Math.min(40, Math.max(11, 8 + footprint * 1.5)),
-          });
-        }
-      }
     }
 
-    // world-atlas clips at 85.6°S — the rest of the way to the pole is Antarctica
+    // world-atlas clips at 85.6S - the rest of the way to the pole is Antarctica
     const [, antarcticaY] = px(0, -85.6);
-    ctx.fillStyle = ICE;
+    ctx.fillStyle = LAND;
     ctx.fillRect(0, antarcticaY, W, H - antarcticaY);
-
-    // Country names, biggest last so major labels paint over minor ones. The
-    // horizontal texture squeeze near the poles is undone with a 1/cos(lat)
-    // stretch so labels keep their aspect on the sphere.
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    for (const label of labels.sort((a, b) => a.size - b.size)) {
-      const [x, y] = px(label.lon, label.lat);
-      const stretch = Math.min(3, 1 / Math.max(0.2, Math.cos((label.lat * Math.PI) / 180)));
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.scale(stretch, 1);
-      ctx.font = `600 ${Math.round(label.size)}px Satoshi, ui-sans-serif, system-ui, sans-serif`;
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.78)";
-      ctx.lineWidth = Math.max(2, label.size / 6);
-      ctx.strokeText(label.name, 0, 0);
-      ctx.fillStyle = "rgba(5, 5, 5, 0.8)";
-      ctx.fillText(label.name, 0, 0);
-      ctx.restore();
-    }
 
     const texture = new THREE.CanvasTexture(canvas);
     texture.colorSpace = THREE.SRGBColorSpace;
-    texture.wrapS = THREE.RepeatWrapping; // smooth the ±180° seam
+    texture.wrapS = THREE.RepeatWrapping; // smooth the +-180 seam
     texture.anisotropy = renderer?.capabilities.getMaxAnisotropy() ?? 1;
     return texture;
   }
@@ -299,19 +229,9 @@
       new THREE.MeshBasicMaterial({ map: makeWorldTexture() })
     );
     scene.add(sphere);
-    // Repaint once fonts settle so the country labels render in Satoshi (the
-    // first paint can beat the webfont load and fall back to system sans).
-    document.fonts?.ready.then(() => {
-      if (disposed || !sphere) return;
-      const material = sphere.material as THREE.MeshBasicMaterial;
-      const oldMap = material.map;
-      material.map = makeWorldTexture();
-      material.needsUpdate = true;
-      oldMap?.dispose();
-    });
 
-    guessPin = makePin(INK);
-    answerPin = makePin(VIOLET);
+    guessPin = makePin(GUESS_COLOR);
+    answerPin = makePin(ANSWER_COLOR);
     scene.add(guessPin, answerPin);
 
     const canvas = renderer.domElement;
@@ -433,7 +353,7 @@
         arcLine = new THREE.Line(
           geometry,
           new THREE.LineDashedMaterial({
-            color: VIOLET,
+            color: ANSWER_COLOR,
             dashSize: 0.03,
             gapSize: 0.018,
             transparent: true,

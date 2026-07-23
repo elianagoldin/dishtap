@@ -509,5 +509,943 @@
     "author": "Eric Chan",
     "license": "CC BY 2.0",
     "bytes": 79838
+  },
+  "tom-yum": {
+    "article": "https://en.wikipedia.org/wiki/Tom_yum",
+    "file": "https://commons.wikimedia.org/wiki/File:Tom_yam_kung_maenam.jpg",
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "bytes": 120469
+  },
+  "som-tam": {
+    "article": "https://en.wikipedia.org/wiki/Som_tam",
+    "file": "https://commons.wikimedia.org/wiki/File:2013_Tam_Lao.jpg",
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "bytes": 176099
+  },
+  "khao-soi": {
+    "article": "https://en.wikipedia.org/wiki/Khao_soi",
+    "file": "https://commons.wikimedia.org/wiki/File:Khao_Soi_Northern_Thai_food_ข้าวซอย_ผักดอง.jpg",
+    "author": "Chainwit.",
+    "license": "CC BY-SA 4.0",
+    "bytes": 190461
+  },
+  "bun-cha": {
+    "article": "https://en.wikipedia.org/wiki/Bún_chả",
+    "file": "https://commons.wikimedia.org/wiki/File:Bún_chả_Vietnamese_food.jpg",
+    "author": "stuart_spivack",
+    "license": "CC BY 2.0",
+    "bytes": 121181
+  },
+  "rendang": {
+    "article": "https://en.wikipedia.org/wiki/Rendang",
+    "file": "https://commons.wikimedia.org/wiki/File:Rendang_daging_sapi_asli_Padang.JPG",
+    "author": "Midori",
+    "license": "CC BY 3.0",
+    "bytes": 157799
+  },
+  "satay": {
+    "article": "https://en.wikipedia.org/wiki/Satay",
+    "file": "https://commons.wikimedia.org/wiki/File:Sate_Udang.JPG",
+    "author": "Gunawan Kartapranata",
+    "license": "CC BY-SA 4.0",
+    "bytes": 259176
+  },
+  "gado-gado": {
+    "article": "https://en.wikipedia.org/wiki/Gado-gado",
+    "file": "https://commons.wikimedia.org/wiki/File:Gado_gado_jakarta.jpg",
+    "author": "Piknikdong",
+    "license": "CC BY-SA 4.0",
+    "bytes": 112349
+  },
+  "sisig": {
+    "article": "https://en.wikipedia.org/wiki/Sisig",
+    "file": "https://commons.wikimedia.org/wiki/File:Authentic_Kapampangan_Sisig.jpg",
+    "author": "Joy L. Cruz",
+    "license": "CC BY-SA 4.0",
+    "bytes": 261703
+  },
+  "halo-halo": {
+    "article": "https://en.wikipedia.org/wiki/Halo-halo",
+    "file": "https://commons.wikimedia.org/wiki/File:Halo-Halo.jpg",
+    "author": "Herbertkikoy",
+    "license": "CC BY-SA 4.0",
+    "bytes": 363256
+  },
+  "chicken-rice": {
+    "article": "https://en.wikipedia.org/wiki/Hainanese_chicken_rice",
+    "file": "https://commons.wikimedia.org/wiki/File:Hainanese_Chicken_Rice.jpg",
+    "author": "No machine-readable author provided. Terence assumed (based on copyright claims).",
+    "license": "CC BY 2.5",
+    "bytes": 100272
+  },
+  "chilli-crab": {
+    "article": "https://en.wikipedia.org/wiki/Chilli_crab",
+    "file": "https://commons.wikimedia.org/wiki/File:Chilli_crab-02.jpg",
+    "author": "megawatts86",
+    "license": "CC BY-SA 2.0",
+    "bytes": 495300
+  },
+  "nasi-lemak": {
+    "article": "https://en.wikipedia.org/wiki/Nasi_lemak",
+    "file": "https://commons.wikimedia.org/wiki/File:Nasi_Lemak_dengan_Chili_Nasi_Lemak_dan_Sotong_Pedas,_di_Penang_Summer_Restaurant.jpg",
+    "author": "Meandkancil2020",
+    "license": "CC BY-SA 4.0",
+    "bytes": 269141
+  },
+  "roti-canai": {
+    "article": "https://en.wikipedia.org/wiki/Roti_canai",
+    "file": "https://commons.wikimedia.org/wiki/File:YosriRotiCanai.jpg",
+    "author": "Yosri at ms.wikipedia",
+    "license": "GFDL",
+    "bytes": 207677
+  },
+  "mango-sticky-rice": {
+    "article": "https://en.wikipedia.org/wiki/Mango_sticky_rice",
+    "file": "https://commons.wikimedia.org/wiki/File:Mango_sticy_rice_(3859549574).jpg",
+    "author": "Dennis Wong from Hong Kong, Hong Kong",
+    "license": "CC BY 2.0",
+    "bytes": 92011
+  },
+  "bibimbap": {
+    "article": "https://en.wikipedia.org/wiki/Bibimbap",
+    "file": "https://commons.wikimedia.org/wiki/File:Dolsot-bibimbap.jpg",
+    "author": "Sous Chef",
+    "license": "CC BY 2.0",
+    "bytes": 161652
+  },
+  "tteokbokki": {
+    "article": "https://en.wikipedia.org/wiki/Tteok-bokki",
+    "file": "https://commons.wikimedia.org/wiki/File:Tteokbokki.JPG",
+    "author": "Popo le Chien",
+    "license": "CC0",
+    "bytes": 99303
+  },
+  "kfc-korean": {
+    "article": "https://en.wikipedia.org/wiki/Korean_fried_chicken",
+    "file": "https://commons.wikimedia.org/wiki/File:Iksan_City_48_Korean_Style_Fried_chicken.jpg",
+    "author": "KOREA.NET",
+    "license": "CC BY-SA 2.0",
+    "bytes": 97282
+  },
+  "okonomiyaki": {
+    "article": "https://en.wikipedia.org/wiki/Okonomiyaki",
+    "file": "https://commons.wikimedia.org/wiki/File:Okonomiyaki_001.jpg",
+    "author": "ume-y",
+    "license": "CC BY 2.0",
+    "bytes": 142603
+  },
+  "takoyaki": {
+    "article": "https://en.wikipedia.org/wiki/Takoyaki",
+    "file": "https://commons.wikimedia.org/wiki/File:ソースとポン酢のたこ焼き.jpg",
+    "author": "加茂川の民",
+    "license": "CC0",
+    "bytes": 355788
+  },
+  "tempura": {
+    "article": "https://en.wikipedia.org/wiki/Tempura",
+    "file": "https://commons.wikimedia.org/wiki/File:Tempura_01.jpg",
+    "author": "Yaco*",
+    "license": "CC BY 2.0",
+    "bytes": 159136
+  },
+  "udon": {
+    "article": "https://en.wikipedia.org/wiki/Sanuki_udon",
+    "file": "https://commons.wikimedia.org/wiki/File:Kama-age_sanuki_udon_by_sekido_in_Takamatsu,_Kagawa.jpg",
+    "author": "sekido",
+    "license": "CC BY 2.0",
+    "bytes": 104494
+  },
+  "hot-pot": {
+    "article": "https://en.wikipedia.org/wiki/Chongqing_hot_pot",
+    "file": "https://commons.wikimedia.org/wiki/File:Chongqing_hotpot_2.jpg",
+    "author": "Hawyih",
+    "license": "Public domain",
+    "bytes": 292338
+  },
+  "mapo-tofu": {
+    "article": "https://en.wikipedia.org/wiki/Mapo_tofu",
+    "file": "https://commons.wikimedia.org/wiki/File:Chen_Mapo_Tofu.jpg",
+    "author": "ZhengZhou",
+    "license": "CC BY-SA 4.0",
+    "bytes": 222190
+  },
+  "kung-pao": {
+    "article": "https://en.wikipedia.org/wiki/Kung_Pao_chicken",
+    "file": "https://commons.wikimedia.org/wiki/File:Kung-pao-shanghai.jpg",
+    "author": "Steven G. Johnson",
+    "license": "CC BY-SA 3.0",
+    "bytes": 118401
+  },
+  "lanzhou-noodles": {
+    "article": "https://en.wikipedia.org/wiki/Lanzhou_beef_noodle_soup",
+    "file": "https://commons.wikimedia.org/wiki/File:蘭州牛肉拉麺.jpg",
+    "author": "Super koikeyuriko",
+    "license": "CC0",
+    "bytes": 94702
+  },
+  "char-siu": {
+    "article": "https://en.wikipedia.org/wiki/Char_siu",
+    "file": "https://commons.wikimedia.org/wiki/File:Charsiu.jpg",
+    "author": "Simon Shek",
+    "license": "CC BY-SA 3.0",
+    "bytes": 170849
+  },
+  "buuz": {
+    "article": "https://en.wikipedia.org/wiki/Buuz",
+    "file": "https://commons.wikimedia.org/wiki/File:Buuz.jpg",
+    "author": "Mizu_Basyo",
+    "license": "CC BY-SA 3.0",
+    "bytes": 139732
+  },
+  "masala-dosa": {
+    "article": "https://en.wikipedia.org/wiki/Masala_dosa",
+    "file": "https://commons.wikimedia.org/wiki/File:Rameshwaram_Cafe_Dosa.jpg",
+    "author": "Asamboi",
+    "license": "CC BY-SA 4.0",
+    "bytes": 250193
+  },
+  "vada-pav": {
+    "article": "https://en.wikipedia.org/wiki/Vada_pav",
+    "file": "https://commons.wikimedia.org/wiki/File:Vada_Pav-Indian_street_food.JPG",
+    "author": "Rutvi Mistry",
+    "license": "CC BY-SA 4.0",
+    "bytes": 86646
+  },
+  "chole-bhature": {
+    "article": "https://en.wikipedia.org/wiki/Chole_bhature",
+    "file": "https://commons.wikimedia.org/wiki/File:Chole_Bhature_from_Nagpur.JPG",
+    "author": "Dheerajk88",
+    "license": "CC BY-SA 4.0",
+    "bytes": 94490
+  },
+  "rogan-josh": {
+    "article": "https://en.wikipedia.org/wiki/Rogan_josh",
+    "file": "https://commons.wikimedia.org/wiki/File:Rogan_Josh_Kashmiri.jpg",
+    "author": "Spice Eats",
+    "license": "CC BY 3.0",
+    "bytes": 138719
+  },
+  "samosa": {
+    "article": "https://en.wikipedia.org/wiki/Samosa",
+    "file": "https://commons.wikimedia.org/wiki/File:Samosas,_snack_food_at_Wikipedia's_16th_Birthday_celebration_in_Chittagong_(01).jpg",
+    "author": "Moheen Reeyad",
+    "license": "CC BY-SA 4.0",
+    "bytes": 265545
+  },
+  "nihari": {
+    "article": "https://en.wikipedia.org/wiki/Nihari",
+    "file": "https://commons.wikimedia.org/wiki/File:Nalli_Nihari_India.jpg",
+    "author": "Nilanjan Sasmal",
+    "license": "CC BY-SA 4.0",
+    "bytes": 275028
+  },
+  "kottu": {
+    "article": "https://en.wikipedia.org/wiki/Kottu",
+    "file": "https://commons.wikimedia.org/wiki/File:Chicken_Kottu.jpg",
+    "author": "Dan arndt",
+    "license": "CC BY-SA 4.0",
+    "bytes": 247537
+  },
+  "karahi": {
+    "article": "https://en.wikipedia.org/wiki/Karahi",
+    "file": "https://commons.wikimedia.org/wiki/File:Half-cooked_Chicken_Curry_-_Kolkata_2011-02-23_1713.JPG",
+    "author": "Biswarup Ganguly",
+    "license": "CC BY 3.0",
+    "bytes": 242328
+  },
+  "khinkali": {
+    "article": "https://en.wikipedia.org/wiki/Khinkali",
+    "file": "https://commons.wikimedia.org/wiki/File:Khinkali,_Restaurant_Aragvi.jpg",
+    "author": "Sandra C from Canada",
+    "license": "CC BY-SA 2.0",
+    "bytes": 81474
+  },
+  "dolma": {
+    "article": "https://en.wikipedia.org/wiki/Dolma",
+    "file": "https://commons.wikimedia.org/wiki/File:Speca_te_mbushura_me_mish.JPG",
+    "author": "Violetamyftari",
+    "license": "CC BY-SA 3.0",
+    "bytes": 267716
+  },
+  "lavash": {
+    "article": "https://en.wikipedia.org/wiki/Lavash",
+    "file": "https://commons.wikimedia.org/wiki/File:Pan_armenio_en_el_mercado_de_Yerevan.JPG",
+    "author": "Wiquijote",
+    "license": "Public domain",
+    "bytes": 131313
+  },
+  "hummus": {
+    "article": "https://en.wikipedia.org/wiki/Hummus",
+    "file": "https://commons.wikimedia.org/wiki/File:Lebanese_style_hummus.jpg",
+    "author": "Beyrouthhh at English Wikipedia",
+    "license": "CC BY 3.0",
+    "bytes": 110693
+  },
+  "tabbouleh": {
+    "article": "https://en.wikipedia.org/wiki/Tabbouleh",
+    "file": "https://commons.wikimedia.org/wiki/File:Tabouleh_1.JPG",
+    "author": "Miansari66",
+    "license": "CC0",
+    "bytes": 199947
+  },
+  "falafel": {
+    "article": "https://en.wikipedia.org/wiki/Falafel",
+    "file": "https://commons.wikimedia.org/wiki/File:Falafels_2.jpg",
+    "author": "Popo le Chien",
+    "license": "CC BY-SA 3.0",
+    "bytes": 169985
+  },
+  "ful-medames": {
+    "article": "https://en.wikipedia.org/wiki/Ful_medames",
+    "file": "https://commons.wikimedia.org/wiki/File:Ful_medames_(arabic_meal).jpg",
+    "author": "Abdullah Geelah",
+    "license": "CC BY-SA 3.0",
+    "bytes": 103326
+  },
+  "doner": {
+    "article": "https://en.wikipedia.org/wiki/Doner_kebab",
+    "file": "https://commons.wikimedia.org/wiki/File:Döner_kebab_slicing.jpg",
+    "author": "",
+    "license": "CC BY-SA 3.0",
+    "bytes": 59872
+  },
+  "lahmacun": {
+    "article": "https://en.wikipedia.org/wiki/Lahmacun",
+    "file": "https://commons.wikimedia.org/wiki/File:Lahmacun.jpg",
+    "author": "No machine-readable author provided. Rainer Zenz assumed (based on copyright claims).",
+    "license": "CC BY-SA 3.0",
+    "bytes": 190870
+  },
+  "kunefe": {
+    "article": "https://en.wikipedia.org/wiki/Knafeh",
+    "file": "https://commons.wikimedia.org/wiki/File:Künefe.jpg",
+    "author": "elif ayse",
+    "license": "CC BY 2.0",
+    "bytes": 144027
+  },
+  "turkish-delight": {
+    "article": "https://en.wikipedia.org/wiki/Turkish_delight",
+    "file": "https://commons.wikimedia.org/wiki/File:TurkishDelightDisplay.jpg",
+    "author": "Quick fix",
+    "license": "CC BY-SA 2.0",
+    "bytes": 246528
+  },
+  "couscous": {
+    "article": "https://en.wikipedia.org/wiki/Couscous",
+    "file": "https://commons.wikimedia.org/wiki/File:Moroccan_cuscus,_from_Casablanca,_September_2018.jpg",
+    "author": "Lmmima",
+    "license": "CC BY-SA 4.0",
+    "bytes": 340643
+  },
+  "suya": {
+    "article": "https://en.wikipedia.org/wiki/Suya",
+    "file": "https://commons.wikimedia.org/wiki/File:SuyavarietiesTX.JPG",
+    "author": "WhisperToMe",
+    "license": "CC0",
+    "bytes": 187739
+  },
+  "egusi": {
+    "article": "https://en.wikipedia.org/wiki/Egusi",
+    "file": "https://commons.wikimedia.org/wiki/File:Egusi_soup_with_pounded_yam_and_assorted_meats.jpg",
+    "author": "Onyenachi64",
+    "license": "CC BY-SA 4.0",
+    "bytes": 364357
+  },
+  "thieboudienne": {
+    "article": "https://en.wikipedia.org/wiki/Thieboudienne",
+    "file": "https://commons.wikimedia.org/wiki/File:Thieboudienne.JPG",
+    "author": "KVDP",
+    "license": "Public domain",
+    "bytes": 170811
+  },
+  "doro-wat": {
+    "article": "https://en.wikipedia.org/wiki/Doro_wat",
+    "file": "https://commons.wikimedia.org/wiki/File:Ethiopian_wat.jpg",
+    "author": "stu_spivack",
+    "license": "CC BY-SA 2.0",
+    "bytes": 121792
+  },
+  "matoke": {
+    "article": "https://en.wikipedia.org/wiki/Matoke",
+    "file": "https://commons.wikimedia.org/wiki/File:Matooke_(Steamed_Bananas).jpg",
+    "author": "Nabunje Leticia",
+    "license": "CC BY-SA 4.0",
+    "bytes": 138167
+  },
+  "sadza": {
+    "article": "https://en.wikipedia.org/wiki/Sadza",
+    "file": "https://commons.wikimedia.org/wiki/File:Ugali_&_Sukuma_Wiki.jpg",
+    "author": "Paresh Jai from Nairobi, Kenya",
+    "license": "CC BY 2.0",
+    "bytes": 256351
+  },
+  "bobotie": {
+    "article": "https://en.wikipedia.org/wiki/Bobotie",
+    "file": "https://commons.wikimedia.org/wiki/File:Bobotie,_South_African_dish.jpg",
+    "author": "Olga Ernst",
+    "license": "CC BY-SA 4.0",
+    "bytes": 208390
+  },
+  "attieke": {
+    "article": "https://en.wikipedia.org/wiki/Attiéké",
+    "file": "https://commons.wikimedia.org/wiki/File:Attieke.JPG",
+    "author": "Serein",
+    "license": "CC BY-SA 3.0",
+    "bytes": 127140
+  },
+  "ndole": {
+    "article": "https://en.wikipedia.org/wiki/Ndolé",
+    "file": "https://commons.wikimedia.org/wiki/File:Ndolè_à_la_viande,_morue_et_crevettes.jpg",
+    "author": "Coco lago",
+    "license": "CC BY-SA 4.0",
+    "bytes": 103059
+  },
+  "pastilla": {
+    "article": "https://en.wikipedia.org/wiki/Pastilla",
+    "file": "https://commons.wikimedia.org/wiki/File:Bisteeya.jpg",
+    "author": "Krista",
+    "license": "CC BY 2.0",
+    "bytes": 116370
+  },
+  "hot-dog": {
+    "article": "https://en.wikipedia.org/wiki/Hot_dog",
+    "file": "https://commons.wikimedia.org/wiki/File:Hot_dog_with_mustard.png",
+    "author": "Czar, original photographed by Renee Comet",
+    "license": "Public domain",
+    "bytes": 552429
+  },
+  "hamburger": {
+    "article": "https://en.wikipedia.org/wiki/Hamburger",
+    "file": "https://commons.wikimedia.org/wiki/File:RedDot_Burger.jpg",
+    "author": "Hongreddotbrewhouse",
+    "license": "CC BY-SA 3.0",
+    "bytes": 135188
+  },
+  "buffalo-wings": {
+    "article": "https://en.wikipedia.org/wiki/Buffalo_wing",
+    "file": "https://commons.wikimedia.org/wiki/File:Buffalo_wings-01.jpg",
+    "author": "Clotee Pridgen Allochuku",
+    "license": "CC BY 2.0",
+    "bytes": 129919
+  },
+  "gumbo": {
+    "article": "https://en.wikipedia.org/wiki/Gumbo",
+    "file": "https://commons.wikimedia.org/wiki/File:Gumbo.JPG",
+    "author": "Amadscientist",
+    "license": "CC BY-SA 3.0",
+    "bytes": 285852
+  },
+  "deep-dish": {
+    "article": "https://en.wikipedia.org/wiki/Chicago-style_pizza",
+    "file": "https://commons.wikimedia.org/wiki/File:Chicago-Style_Stuffed_Pizza.jpg",
+    "author": "Олександр Дячук",
+    "license": "CC BY-SA 4.0",
+    "bytes": 106502
+  },
+  "cheesesteak": {
+    "article": "https://en.wikipedia.org/wiki/Cheesesteak",
+    "file": "https://commons.wikimedia.org/wiki/File:PatsCheesesteak.jpg",
+    "author": "",
+    "license": "CC BY-SA 3.0",
+    "bytes": 223203
+  },
+  "lobster-roll": {
+    "article": "https://en.wikipedia.org/wiki/Lobster_roll",
+    "file": "https://commons.wikimedia.org/wiki/File:Lobster_Roll.png",
+    "author": "Maguy23",
+    "license": "CC BY-SA 4.0",
+    "bytes": 928933
+  },
+  "montreal-bagel": {
+    "article": "https://en.wikipedia.org/wiki/Montreal-style_bagel",
+    "file": "https://commons.wikimedia.org/wiki/File:Bagels-Montreal-REAL.jpg",
+    "author": "Garyperlman at English Wikipedia",
+    "license": "Public domain",
+    "bytes": 187155
+  },
+  "nanaimo-bar": {
+    "article": "https://en.wikipedia.org/wiki/Nanaimo_bar",
+    "file": "https://commons.wikimedia.org/wiki/File:Nanaimo_bar.JPG",
+    "author": "Stephanie Spencer",
+    "license": "CC BY 2.5",
+    "bytes": 137107
+  },
+  "elote": {
+    "article": "https://en.wikipedia.org/wiki/Elote",
+    "file": "https://commons.wikimedia.org/wiki/File:CookedCornOnTheCob.JPG",
+    "author": "Jonathunder",
+    "license": "CC BY-SA 3.0",
+    "bytes": 184311
+  },
+  "cochinita": {
+    "article": "https://en.wikipedia.org/wiki/Cochinita_pibil",
+    "file": "https://commons.wikimedia.org/wiki/File:Cochinita_pibil_2.jpg",
+    "author": "Popo le Chien",
+    "license": "CC BY-SA 3.0",
+    "bytes": 138583
+  },
+  "chiles-en-nogada": {
+    "article": "https://en.wikipedia.org/wiki/Chiles_en_nogada",
+    "file": "https://commons.wikimedia.org/wiki/File:Chile_en_nogada24.jpg",
+    "author": "Jessica Toledo",
+    "license": "CC BY-SA 4.0",
+    "bytes": 71177
+  },
+  "gallo-pinto": {
+    "article": "https://en.wikipedia.org/wiki/Gallo_pinto",
+    "file": "https://commons.wikimedia.org/wiki/File:Gallo_Pinto.jpg",
+    "author": "Gmasmcal",
+    "license": "CC BY 4.0",
+    "bytes": 204083
+  },
+  "baleada": {
+    "article": "https://en.wikipedia.org/wiki/Baleada",
+    "file": "https://commons.wikimedia.org/wiki/File:Baleada.jpg",
+    "author": "",
+    "license": "CC BY-SA 3.0",
+    "bytes": 53136
+  },
+  "mofongo": {
+    "article": "https://en.wikipedia.org/wiki/Mofongo",
+    "file": "https://commons.wikimedia.org/wiki/File:Mofongo.jpg",
+    "author": "Diane",
+    "license": "CC BY 2.0",
+    "bytes": 134885
+  },
+  "sancocho": {
+    "article": "https://en.wikipedia.org/wiki/Sancocho",
+    "file": "https://commons.wikimedia.org/wiki/File:Sancocho_de_espinazo_de_cerdo.jpg",
+    "author": "Daguerreroa",
+    "license": "CC BY-SA 4.0",
+    "bytes": 223924
+  },
+  "doubles": {
+    "article": "https://en.wikipedia.org/wiki/Doubles_(food)",
+    "file": "https://commons.wikimedia.org/wiki/File:FOOD_Doubles_2.jpg",
+    "author": "Grueslayer",
+    "license": "CC BY-SA 4.0",
+    "bytes": 175456
+  },
+  "griot": {
+    "article": "https://en.wikipedia.org/wiki/Griot_(food)",
+    "file": "https://commons.wikimedia.org/wiki/File:Griot_haïtien_(42675563925).jpg",
+    "author": "Lëa-Kim Châteauneuf",
+    "license": "CC BY-SA 2.0",
+    "bytes": 209746
+  },
+  "bandeja-paisa": {
+    "article": "https://en.wikipedia.org/wiki/Bandeja_paisa",
+    "file": "https://commons.wikimedia.org/wiki/File:Bandeja_paisa,_plato_Colombiano.jpg",
+    "author": "Wilfredor",
+    "license": "CC0",
+    "bytes": 251644
+  },
+  "ajiaco": {
+    "article": "https://en.wikipedia.org/wiki/Ajiaco",
+    "file": "https://commons.wikimedia.org/wiki/File:Ajiaco.jpg",
+    "author": "Mauricio Giraldo from Bogotá, Colombia",
+    "license": "CC BY-SA 2.0",
+    "bytes": 81537
+  },
+  "pabellon": {
+    "article": "https://en.wikipedia.org/wiki/Pabellón_criollo",
+    "file": "https://commons.wikimedia.org/wiki/File:Pabellón_Criollo_Venezolano.jpg",
+    "author": "Wilfredor",
+    "license": "CC BY-SA 4.0",
+    "bytes": 171848
+  },
+  "lomo-saltado": {
+    "article": "https://en.wikipedia.org/wiki/Lomo_saltado",
+    "file": "https://commons.wikimedia.org/wiki/File:Lomo_Saltado_-_Lima,_Peru_Miraflores_(Tiendecita_Blanca).jpg",
+    "author": "Chasqui (Luis Tamayo)",
+    "license": "CC BY-SA 2.0",
+    "bytes": 140439
+  },
+  "saltena": {
+    "article": "https://en.wikipedia.org/wiki/Salteña",
+    "file": "https://commons.wikimedia.org/wiki/File:Salteñas_de_Bolivia.jpg",
+    "author": "EEJCC",
+    "license": "CC BY-SA 4.0",
+    "bytes": 233338
+  },
+  "chivito": {
+    "article": "https://en.wikipedia.org/wiki/Chivito_(sandwich)",
+    "file": "https://commons.wikimedia.org/wiki/File:Chivito1.jpg",
+    "author": "Carlinosin at English Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "bytes": 231357
+  },
+  "dulce-de-leche": {
+    "article": "https://en.wikipedia.org/wiki/Dulce_de_leche",
+    "file": "https://commons.wikimedia.org/wiki/File:DulceDeLeche.jpg",
+    "author": "audinou from Paris, France",
+    "license": "CC BY 2.0",
+    "bytes": 175319
+  },
+  "curanto": {
+    "article": "https://en.wikipedia.org/wiki/Curanto",
+    "file": "https://commons.wikimedia.org/wiki/File:Destape_de_curanto.JPG",
+    "author": "Lin linao",
+    "license": "CC BY-SA 3.0",
+    "bytes": 206889
+  },
+  "pao-de-queijo": {
+    "article": "https://en.wikipedia.org/wiki/Pão_de_queijo",
+    "file": "https://commons.wikimedia.org/wiki/File:Cheesebread.jpg",
+    "author": "Murilo manzini",
+    "license": "CC BY-SA 4.0",
+    "bytes": 119838
+  },
+  "moqueca": {
+    "article": "https://en.wikipedia.org/wiki/Moqueca",
+    "file": "https://commons.wikimedia.org/wiki/File:Moqueca.jpg",
+    "author": "BR",
+    "license": "CC BY-SA 4.0",
+    "bytes": 170692
+  },
+  "brigadeiro": {
+    "article": "https://en.wikipedia.org/wiki/Brigadeiro",
+    "file": "https://commons.wikimedia.org/wiki/File:Brigadeiro.jpg",
+    "author": "User Mayra (Maych) on Flickr",
+    "license": "CC BY-SA 2.0",
+    "bytes": 98573
+  },
+  "carbonara": {
+    "article": "https://en.wikipedia.org/wiki/Carbonara",
+    "file": "https://commons.wikimedia.org/wiki/File:Espaguetis_carbonara.jpg",
+    "author": "Javier Somoza",
+    "license": "CC BY-SA 4.0",
+    "bytes": 235348
+  },
+  "risotto-milanese": {
+    "article": "https://en.wikipedia.org/wiki/Risotto_alla_milanese",
+    "file": "https://commons.wikimedia.org/wiki/File:Risotto_med_safran_(6977872494).jpg",
+    "author": "cyclonebill from Copenhagen, Denmark",
+    "license": "CC BY-SA 2.0",
+    "bytes": 85176
+  },
+  "pesto": {
+    "article": "https://en.wikipedia.org/wiki/Pesto",
+    "file": "https://commons.wikimedia.org/wiki/File:BasilPesto.JPG",
+    "author": "Ɱ",
+    "license": "CC BY-SA 3.0",
+    "bytes": 112377
+  },
+  "arancini": {
+    "article": "https://en.wikipedia.org/wiki/Arancini",
+    "file": "https://commons.wikimedia.org/wiki/File:Arancini_002.jpg",
+    "author": "No machine-readable author provided. Gmelfi assumed (based on copyright claims).",
+    "license": "Public domain",
+    "bytes": 241684
+  },
+  "tiramisu": {
+    "article": "https://en.wikipedia.org/wiki/Tiramisu",
+    "file": "https://commons.wikimedia.org/wiki/File:Tiramisu_-_Raffaele_Diomede.jpg",
+    "author": "Raffaele Diomede from Pordenone, ITALIA",
+    "license": "CC BY 2.0",
+    "bytes": 135968
+  },
+  "ratatouille": {
+    "article": "https://en.wikipedia.org/wiki/Ratatouille",
+    "file": "https://commons.wikimedia.org/wiki/File:Ratatouille_home_cooked.jpg",
+    "author": "Jack145945",
+    "license": "CC0",
+    "bytes": 264740
+  },
+  "bouillabaisse": {
+    "article": "https://en.wikipedia.org/wiki/Bouillabaisse",
+    "file": "https://commons.wikimedia.org/wiki/File:Bullabessa.jpg",
+    "author": "Slastic",
+    "license": "CC BY 3.0",
+    "bytes": 96529
+  },
+  "quiche": {
+    "article": "https://en.wikipedia.org/wiki/Quiche",
+    "file": "https://commons.wikimedia.org/wiki/File:Quiche.jpg",
+    "author": "Ghouston",
+    "license": "CC0",
+    "bytes": 193697
+  },
+  "tarte-tatin": {
+    "article": "https://en.wikipedia.org/wiki/Tarte_Tatin",
+    "file": "https://commons.wikimedia.org/wiki/File:Franse_tarte_tatin.jpg",
+    "author": "Djenghisz",
+    "license": "CC BY-SA 3.0",
+    "bytes": 220420
+  },
+  "macaron": {
+    "article": "https://en.wikipedia.org/wiki/Macaron",
+    "file": "https://commons.wikimedia.org/wiki/File:VanillaMacaron.jpg",
+    "author": "Michelle Naherny",
+    "license": "CC BY-SA 4.0",
+    "bytes": 76911
+  },
+  "gazpacho": {
+    "article": "https://en.wikipedia.org/wiki/Gazpacho",
+    "file": "https://commons.wikimedia.org/wiki/File:Gazpacho_Malagueño_con_su_“picaíto”_-_Moreno,_Playa_Burriana_(cropped).jpg",
+    "author": "Haydn Blackey",
+    "license": "CC BY-SA 2.0",
+    "bytes": 71441
+  },
+  "tortilla": {
+    "article": "https://en.wikipedia.org/wiki/Spanish_omelette",
+    "file": "https://commons.wikimedia.org/wiki/File:Tortilla_de_patata_-_San_Sebastián.jpg",
+    "author": "Kent Wang",
+    "license": "CC BY-SA 2.0",
+    "bytes": 134041
+  },
+  "pintxos": {
+    "article": "https://en.wikipedia.org/wiki/Pintxo",
+    "file": "https://commons.wikimedia.org/wiki/File:Pinchos_bermeo_2.JPG",
+    "author": "Telle",
+    "license": "CC BY-SA 3.0",
+    "bytes": 158904
+  },
+  "francesinha": {
+    "article": "https://en.wikipedia.org/wiki/Francesinha",
+    "file": "https://commons.wikimedia.org/wiki/File:Francesinha_Sandwich_(cropped).jpg",
+    "author": "TheRealDapperDan",
+    "license": "CC BY-SA 4.0",
+    "bytes": 87240
+  },
+  "full-english": {
+    "article": "https://en.wikipedia.org/wiki/Full_breakfast",
+    "file": "https://commons.wikimedia.org/wiki/File:Full_English_breakfast_(cropped).jpg",
+    "author": "Joadl",
+    "license": "CC BY-SA 3.0 at",
+    "bytes": 175736
+  },
+  "cornish-pasty": {
+    "article": "https://en.wikipedia.org/wiki/Cornish_pasty",
+    "file": "https://commons.wikimedia.org/wiki/File:Cornish_Pasty_(cropped).jpeg",
+    "author": "David Johnson [1]",
+    "license": "CC BY-SA 3.0",
+    "bytes": 126321
+  },
+  "cawl": {
+    "article": "https://en.wikipedia.org/wiki/Cawl",
+    "file": "https://commons.wikimedia.org/wiki/File:Cawl_Cymreig.jpg",
+    "author": "Rhyshuw1 at Welsh Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "bytes": 62771
+  },
+  "moules-frites": {
+    "article": "https://en.wikipedia.org/wiki/Moules-frites",
+    "file": "https://commons.wikimedia.org/wiki/File:Moules-frites_at_Chez_Leon_in_Brussels.jpg",
+    "author": "Edward",
+    "license": "CC BY-SA 4.0",
+    "bytes": 165197
+  },
+  "bitterballen": {
+    "article": "https://en.wikipedia.org/wiki/Bitterballen",
+    "file": "https://commons.wikimedia.org/wiki/File:Bitterballen_mosterd_mayo.jpg",
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "bytes": 212228
+  },
+  "currywurst": {
+    "article": "https://en.wikipedia.org/wiki/Currywurst",
+    "file": "https://commons.wikimedia.org/wiki/File:20220430_currywurst.jpg",
+    "author": "Ziko van Dijk",
+    "license": "CC BY-SA 4.0",
+    "bytes": 145961
+  },
+  "sauerbraten": {
+    "article": "https://en.wikipedia.org/wiki/Sauerbraten",
+    "file": "https://commons.wikimedia.org/wiki/File:Heldrunger_Sauerbraten_2.JPG",
+    "author": "Dr. Bernd Gross",
+    "license": "CC BY-SA 4.0",
+    "bytes": 153317
+  },
+  "black-forest": {
+    "article": "https://en.wikipedia.org/wiki/Black_Forest_gateau",
+    "file": "https://commons.wikimedia.org/wiki/File:Black_Forest_gateau.jpg",
+    "author": "Mikelo",
+    "license": "CC BY-SA 2.0",
+    "bytes": 200397
+  },
+  "rosti": {
+    "article": "https://en.wikipedia.org/wiki/Rösti",
+    "file": "https://commons.wikimedia.org/wiki/File:Roesti.jpg",
+    "author": "Benutzer:Mussklprozz",
+    "license": "CC BY-SA 3.0",
+    "bytes": 56854
+  },
+  "raclette": {
+    "article": "https://en.wikipedia.org/wiki/Raclette",
+    "file": "https://commons.wikimedia.org/wiki/File:Raclette_20040817_140816.jpg",
+    "author": "Ka23 13",
+    "license": "CC BY-SA 4.0",
+    "bytes": 192334
+  },
+  "sachertorte": {
+    "article": "https://en.wikipedia.org/wiki/Sachertorte",
+    "file": "https://commons.wikimedia.org/wiki/File:Sachertorte_DSC03027.JPG",
+    "author": "David Monniaux",
+    "license": "CC BY-SA 3.0",
+    "bytes": 148035
+  },
+  "svickova": {
+    "article": "https://en.wikipedia.org/wiki/Svíčková",
+    "file": "https://commons.wikimedia.org/wiki/File:Svíčková_na_smetaně.JPG",
+    "author": "Matyáš Havel",
+    "license": "CC BY-SA 3.0",
+    "bytes": 121490
+  },
+  "langos": {
+    "article": "https://en.wikipedia.org/wiki/Lángos",
+    "file": "https://commons.wikimedia.org/wiki/File:Langos_Eger_Hungary.jpg",
+    "author": "sikeri",
+    "license": "CC BY-SA 4.0",
+    "bytes": 178018
+  },
+  "chicken-kyiv": {
+    "article": "https://en.wikipedia.org/wiki/Chicken_Kiev",
+    "file": "https://commons.wikimedia.org/wiki/File:Chicken_Kiev_-_Ukrainian_East_Village_restaurant.jpg",
+    "author": "Jason Lam",
+    "license": "CC BY-SA 2.0",
+    "bytes": 93868
+  },
+  "cevapi": {
+    "article": "https://en.wikipedia.org/wiki/Ćevapi",
+    "file": "https://commons.wikimedia.org/wiki/File:Closeup_grilled_Serbian_sausages_(49152328346).jpg",
+    "author": "Nenad Stojkovic from Srbija",
+    "license": "CC BY 2.0",
+    "bytes": 107036
+  },
+  "burek": {
+    "article": "https://en.wikipedia.org/wiki/Burek",
+    "file": "https://commons.wikimedia.org/wiki/File:Meat_burek_(GAK_bakery,_Belgrade,_Serbia).jpg",
+    "author": "Petar Milošević",
+    "license": "CC BY-SA 4.0",
+    "bytes": 153066
+  },
+  "gyros": {
+    "article": "https://en.wikipedia.org/wiki/Gyros",
+    "file": "https://commons.wikimedia.org/wiki/File:Pita_giros.JPG",
+    "author": "Antonio Fajardo i López",
+    "license": "CC BY-SA 3.0",
+    "bytes": 147656
+  },
+  "sarmale": {
+    "article": "https://en.wikipedia.org/wiki/Sarma_(food)",
+    "file": "https://commons.wikimedia.org/wiki/File:Yaprak_sarma,_Kayseri_style.jpg",
+    "author": "E4024",
+    "license": "CC BY-SA 4.0",
+    "bytes": 173498
+  },
+  "banitsa": {
+    "article": "https://en.wikipedia.org/wiki/Banitsa",
+    "file": "https://commons.wikimedia.org/wiki/File:Вкусна_домашна_баница.JPG",
+    "author": "Sheku80",
+    "license": "CC BY-SA 3.0",
+    "bytes": 168786
+  },
+  "kanelbulle": {
+    "article": "https://en.wikipedia.org/wiki/Cinnamon_roll",
+    "file": "https://commons.wikimedia.org/wiki/File:Cinnamon_roll_in_Stockholm.jpg",
+    "author": "Kritzolina",
+    "license": "CC BY-SA 4.0",
+    "bytes": 132512
+  },
+  "farikal": {
+    "article": "https://en.wikipedia.org/wiki/Fårikål",
+    "file": "https://commons.wikimedia.org/wiki/File:Får_i_kål.jpg",
+    "author": "Jarvin",
+    "license": "CC BY 3.0",
+    "bytes": 126360
+  },
+  "brunost": {
+    "article": "https://en.wikipedia.org/wiki/Brunost",
+    "file": "https://commons.wikimedia.org/wiki/File:Brunost.jpg",
+    "author": "",
+    "license": "CC BY-SA 3.0",
+    "bytes": 154821
+  },
+  "karelian-pasty": {
+    "article": "https://en.wikipedia.org/wiki/Karelian_pasty",
+    "file": "https://commons.wikimedia.org/wiki/File:Karjalanpiirakka-20060227.jpg",
+    "author": "Jarno Elonen",
+    "license": "Public domain",
+    "bytes": 132926
+  },
+  "olivier-salad": {
+    "article": "https://en.wikipedia.org/wiki/Olivier_salad",
+    "file": "https://commons.wikimedia.org/wiki/File:Салат_Оливье_03.jpg",
+    "author": "Pannet",
+    "license": "CC BY-SA 4.0",
+    "bytes": 148301
+  },
+  "hangi": {
+    "article": "https://en.wikipedia.org/wiki/Hāngī",
+    "file": "https://commons.wikimedia.org/wiki/File:Hangi_prepare.jpg",
+    "author": "Einalem",
+    "license": "CC BY-SA 2.0",
+    "bytes": 187268
+  },
+  "anzac-biscuit": {
+    "article": "https://en.wikipedia.org/wiki/Anzac_biscuit",
+    "file": "https://commons.wikimedia.org/wiki/File:ANZAC_biscuits_(14_April_2006).jpg",
+    "author": "me (w:User:pfctdayelise)",
+    "license": "CC BY-SA 2.5",
+    "bytes": 137707
+  },
+  "poisson-cru": {
+    "article": "https://en.wikipedia.org/wiki/Poisson_cru",
+    "file": "https://commons.wikimedia.org/wiki/File:Poisson_cru_au_lait_de_coco.jpg",
+    "author": "Eric Chan",
+    "license": "CC BY 2.0",
+    "bytes": 79838
+  },
+  "palusami": {
+    "article": "https://en.wikipedia.org/wiki/Palusami",
+    "file": "https://commons.wikimedia.org/wiki/File:Luaulau.png",
+    "author": "Chedlund808",
+    "license": "CC BY-SA 4.0",
+    "bytes": 968750
+  },
+  "laplap": {
+    "article": "https://en.wikipedia.org/wiki/Laplap",
+    "file": "https://commons.wikimedia.org/wiki/File:Laplap_sosor.jpg",
+    "author": "Lenzo Nimoho",
+    "license": "CC BY-SA 4.0",
+    "bytes": 178687
+  },
+  "ghormeh-sabzi": {
+    "article": "https://en.wikipedia.org/wiki/Ghormeh_sabzi",
+    "file": "https://commons.wikimedia.org/wiki/File:Ghormeh_Sabzi.JPG",
+    "author": "Amin Majidi",
+    "license": "CC0",
+    "bytes": 328799
+  },
+  "masgouf": {
+    "article": "https://en.wikipedia.org/wiki/Masgouf",
+    "file": "https://commons.wikimedia.org/wiki/File:Masgouf.jpg",
+    "author": "Hill93",
+    "license": "CC BY-SA 4.0",
+    "bytes": 187900
+  },
+  "mandi": {
+    "article": "https://en.wikipedia.org/wiki/Mandi_(food)",
+    "file": "https://commons.wikimedia.org/wiki/File:Mandi_pit_from_inside.jpg",
+    "author": "Donpapa",
+    "license": "CC BY-SA 4.0",
+    "bytes": 79771
+  },
+  "beshbarmak": {
+    "article": "",
+    "file": "https://commons.wikimedia.org/wiki/File:Beshbarmak,_national_dish_(3991850909).jpg",
+    "author": "Peretz Partensky from San Francisco, USA",
+    "license": "CC BY-SA 2.0",
+    "bytes": 205417
+  },
+  "zurek": {
+    "article": "",
+    "file": "https://commons.wikimedia.org/wiki/File:Zurek_Sour_Rye_Soup,_Warsaw.jpg",
+    "author": "Ken Eckert",
+    "license": "CC BY-SA 4.0",
+    "bytes": 188084
   }
 }

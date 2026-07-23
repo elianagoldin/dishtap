@@ -18,12 +18,13 @@ export function distanceKm(a: LatLon, b: LatLon): number {
 export const MAX_ROUND_SCORE = 1000;
 
 /**
- * GeoGuessr-style falloff: anything within 100km is a bullseye, then points
- * decay exponentially so same-country guesses still feel rewarding.
+ * City-hunting falloff: within 50km of the origin city is a bullseye, then
+ * points decay exponentially — same-country taps still score well, but
+ * precision is what wins.
  */
 export function scoreForDistance(km: number): number {
-  if (km <= 100) return MAX_ROUND_SCORE;
-  return Math.round(MAX_ROUND_SCORE * Math.exp(-(km - 100) / 2000));
+  if (km <= 50) return MAX_ROUND_SCORE;
+  return Math.round(MAX_ROUND_SCORE * Math.exp(-(km - 50) / 1500));
 }
 
 /** Convert lat/lon to a unit-sphere XYZ in the three.js globe convention. */
