@@ -1,5 +1,7 @@
 # DishTap 🌍🍜
 
+## ▶️ [PLAY THE GAME → elianagoldin.github.io/dishtap](https://elianagoldin.github.io/dishtap/)
+
 A food-geography game: we name a famous dish, you spin the globe and tap the
 country it was born in. Tap anywhere in the right country for a bullseye.
 
