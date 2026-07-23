@@ -1,22 +1,28 @@
-// Daily-puzzle mechanics: everyone gets the same 5 dishes per UTC day, and a
+// Daily-puzzle mechanics: everyone gets the same 5 dishes per calendar day, and a
 // finished game is remembered locally so each day can only be played once.
 import { DISHES, type Dish } from "./dishes";
 
-/** Day #1 of DishTap. Puzzle number = UTC days since then + 1. */
-const EPOCH_UTC = Date.UTC(2026, 6, 21); // 2026-07-21
+/**
+ * Day #1 of DishTap. Like Wordle, the puzzle follows the player's LOCAL
+ * calendar date — everyone sharing a date shares the five dishes, and the
+ * next puzzle unlocks at each player's own midnight.
+ */
+const EPOCH_LOCAL = new Date(2026, 6, 21).getTime(); // 2026-07-21, local midnight
 const DAY_MS = 86_400_000;
 export const ROUNDS_PER_GAME = 5;
 
 export function todayNumber(): number {
   const now = new Date();
-  const todayUtc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
-  return Math.max(1, Math.floor((todayUtc - EPOCH_UTC) / DAY_MS) + 1);
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+  // round (not floor) so DST's 23/25-hour days still land on whole day counts
+  return Math.max(1, Math.round((startOfToday - EPOCH_LOCAL) / DAY_MS) + 1);
 }
 
-/** ms until the next UTC midnight (when the next puzzle unlocks). */
+/** ms until the next LOCAL midnight (when the next puzzle unlocks). */
 export function msUntilTomorrow(): number {
-  const now = Date.now();
-  return DAY_MS - (now % DAY_MS);
+  const now = new Date();
+  const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1).getTime();
+  return Math.max(0, nextMidnight - now.getTime());
 }
 
 // mulberry32 — tiny deterministic PRNG so every player shuffles identically

@@ -27,13 +27,6 @@
     "license": "CC0",
     "bytes": 89751
   },
-  "pad-thai": {
-    "article": "https://en.wikipedia.org/wiki/Pad_thai",
-    "file": "https://commons.wikimedia.org/wiki/File:Phat_Thai_kung_Chang_Khien_street_stall.jpg",
-    "author": "Takeaway",
-    "license": "CC BY-SA 3.0",
-    "bytes": 253806
-  },
   "paella": {
     "article": "https://en.wikipedia.org/wiki/Paella",
     "file": "https://commons.wikimedia.org/wiki/File:01_Paella_Valenciana_original.jpg",
@@ -75,13 +68,6 @@
     "author": "Yuvraj Singh 97",
     "license": "CC BY-SA 4.0",
     "bytes": 342410
-  },
-  "peking-duck": {
-    "article": "https://en.wikipedia.org/wiki/Peking_duck",
-    "file": "https://commons.wikimedia.org/wiki/File:Peking_Duck,_2014_(02).jpg",
-    "author": "City Foodsters",
-    "license": "CC BY 2.0",
-    "bytes": 117841
   },
   "pho": {
     "article": "https://en.wikipedia.org/wiki/Pho",
@@ -167,13 +153,6 @@
     "license": "CC BY 2.0",
     "bytes": 156075
   },
-  "irish-stew": {
-    "article": "https://en.wikipedia.org/wiki/Irish_stew",
-    "file": "https://commons.wikimedia.org/wiki/File:Irish_Beef_Stew_(34046928633).jpg",
-    "author": "A Healthier Michigan from Detroit, United States",
-    "license": "CC BY-SA 2.0",
-    "bytes": 143944
-  },
   "meatballs": {
     "article": "https://en.wikipedia.org/wiki/Swedish_meatballs",
     "file": "https://commons.wikimedia.org/wiki/File:Holiday_Swedish_Meatballs_-_39843240661.jpg",
@@ -215,13 +194,6 @@
     "author": "Takeaway",
     "license": "CC BY-SA 3.0",
     "bytes": 168233
-  },
-  "waffles": {
-    "article": "https://en.wikipedia.org/wiki/Belgian_waffle",
-    "file": "https://commons.wikimedia.org/wiki/File:Waffle_with_strawberries_and_confectioner's_sugar.jpg",
-    "author": "Ralph Daily",
-    "license": "CC BY 2.0",
-    "bytes": 183085
   },
   "moussaka": {
     "article": "https://en.wikipedia.org/wiki/Moussaka",
@@ -958,20 +930,6 @@
     "license": "CC BY-SA 4.0",
     "bytes": 928933
   },
-  "montreal-bagel": {
-    "article": "https://en.wikipedia.org/wiki/Montreal-style_bagel",
-    "file": "https://commons.wikimedia.org/wiki/File:Bagels-Montreal-REAL.jpg",
-    "author": "Garyperlman at English Wikipedia",
-    "license": "Public domain",
-    "bytes": 187155
-  },
-  "nanaimo-bar": {
-    "article": "https://en.wikipedia.org/wiki/Nanaimo_bar",
-    "file": "https://commons.wikimedia.org/wiki/File:Nanaimo_bar.JPG",
-    "author": "Stephanie Spencer",
-    "license": "CC BY 2.5",
-    "bytes": 137107
-  },
   "elote": {
     "article": "https://en.wikipedia.org/wiki/Elote",
     "file": "https://commons.wikimedia.org/wiki/File:CookedCornOnTheCob.JPG",
@@ -1301,13 +1259,6 @@
     "license": "CC BY-SA 4.0",
     "bytes": 178018
   },
-  "chicken-kyiv": {
-    "article": "https://en.wikipedia.org/wiki/Chicken_Kiev",
-    "file": "https://commons.wikimedia.org/wiki/File:Chicken_Kiev_-_Ukrainian_East_Village_restaurant.jpg",
-    "author": "Jason Lam",
-    "license": "CC BY-SA 2.0",
-    "bytes": 93868
-  },
   "cevapi": {
     "article": "https://en.wikipedia.org/wiki/Ćevapi",
     "file": "https://commons.wikimedia.org/wiki/File:Closeup_grilled_Serbian_sausages_(49152328346).jpg",
@@ -1447,5 +1398,19 @@
     "author": "Ken Eckert",
     "license": "CC BY-SA 4.0",
     "bytes": 188084
+  },
+  "colcannon": {
+    "article": "https://en.wikipedia.org/wiki/Colcannon",
+    "file": "https://commons.wikimedia.org/wiki/File:Colcannon.JPG",
+    "author": "Alison Cassidy",
+    "license": "Public domain",
+    "bytes": 232898
+  },
+  "butter-tart": {
+    "article": "https://en.wikipedia.org/wiki/Butter_tart",
+    "file": "https://commons.wikimedia.org/wiki/File:ButtertartS1360020.jpg",
+    "author": "Alex Lozupone",
+    "license": "CC BY-SA 4.0",
+    "bytes": 129451
   }
 }
